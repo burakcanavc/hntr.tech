@@ -1,1 +1,1 @@
-mesleki uygulama projesi1
+mesleki uygulama projesi
