@@ -1,0 +1,1 @@
+mesleki uygulama projesi
