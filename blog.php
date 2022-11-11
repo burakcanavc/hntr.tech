@@ -107,12 +107,7 @@
 																<input type="email" class="form-control" id="email">
 															</div>
 														</div>
-														<div class="col-md-12">
-															<div class="form-group">
-																<label for="title">Başlık</label>
-																<input type="url" class="form-control" id="website">
-															</div>
-														</div>
+													
 														<div class="col-md-12">
 															<div class="form-group">
 																<label for="message">Yorum</label>

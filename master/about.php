@@ -69,7 +69,7 @@
                 
                   <br>
                   <div style="text-align: center">
-                  <img style="max-width:40%; height: auto;" src="assets/images/aboutus.jpg" alt="about">
+                  <img style="max-width:40%; height: auto;" src="assets/images/about.jpg" alt="about">
                   </div>
                   <br>
                   <div style="text-align: center">

@@ -4,7 +4,7 @@
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>hntr.tech Admin</title>
+    <title>hntr.tech Master</title>
     <script src="https://cdn.ckeditor.com/4.13.0/standard/ckeditor.js"></script>
     <!-- plugins:css -->
     <link rel="stylesheet" href="assets/vendors/mdi/css/materialdesignicons.min.css">
@@ -46,9 +46,17 @@
           <li class="nav-item menu-items">
             <a class="nav-link" href="messages.php">
               <span class="menu-icon">
-                <i class="mdi mdi-email"></i>
+                <i class="mdi mdi-message-text"></i>
               </span>
               <span class="menu-title">Mesajlar</span>
+            </a>
+          </li>
+          <li class="nav-item menu-items">
+            <a class="nav-link" href="notification.php">
+              <span class="menu-icon">
+                <i class="mdi mdi-bell"></i>
+              </span>
+              <span class="menu-title">Bildirimler</span>
             </a>
           </li>
           <li class="nav-item nav-category">
@@ -87,13 +95,20 @@
             </a>
           </li>
           <li class="nav-item menu-items">
-            <a class="nav-link" href="blog.php">
+            <a class="nav-link" data-toggle="collapse" href="#auth" aria-expanded="false" aria-controls="auth">
               <span class="menu-icon">
                 <i class="mdi mdi-blogger"></i>
               </span>
               <span class="menu-title">Blog</span>
+              <i class="menu-arrow"></i>
             </a>
-          </li>
+            <div class="collapse" id="auth">
+              <ul class="nav flex-column sub-menu">
+                <li class="nav-item"> <a class="nav-link" href="blog.php"> Blog Oluştur </a></li>
+                <li class="nav-item"> <a class="nav-link" href="error-404.php"> Blog Yazıları </a></li>
+              </ul>
+            </div>
+          </li> 
           <li class="nav-item nav-category">
             <span class="nav-link">Admin Paneli Elemanları</span>
           </li>

@@ -9,18 +9,15 @@
               <div class="col-lg-12 grid-margin stretch-card">
                 <div class="card">
                   <div class="card-body">
-                  <h3  style="text-align:center;" class="card-title">Mesajlar</h3>
-                  
-                  <hr size="10" color="#fff">
-                  
-                    <div class="table-responsive">
+                  <h3  style="text-align:center;" class="card-title">Bildirimler</h3>
+                  <hr size="10" color="#fff">                    <div class="table-responsive">
                       <table class="table">
                         <thead>
                           <tr>
                             <th>İsim</th>
                             <th>Email</th>
                             <th>Tarih</th>
-                            <th>Mesaj</th>
+                            <th>Yorum</th>
                           </tr>
                         </thead>
                         <tbody>
