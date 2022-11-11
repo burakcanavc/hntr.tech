@@ -1,9 +1,10 @@
 <!-- partial:partials/_footer.html -->
 <footer class="footer">
-            <div class="d-sm-flex justify-content-center justify-content-sm-between">
-              <span class="text-muted d-block text-center text-sm-left d-sm-inline-block">Copyright © bootstrapdash.com 2020</span>
-              <span class="float-none float-sm-right d-block mt-1 mt-sm-0 text-center"> Free <a href="https://www.bootstrapdash.com/bootstrap-admin-template/" target="_blank">Bootstrap admin templates</a> from Bootstrapdash.com</span>
-            </div>
+<div class="row mt-5">
+                <div class="col-12 mt-xl-2">
+                  <p class="text-white font-weight-medium text-center">Copyright &copy; 2022 &nbsp;<a href="https://hntr.tech" style="color:#fff;">hntr.tech</a>&nbsp; Tüm Hakları Saklıdır. </p>
+                  
+                </div>
           </footer>
           <!-- partial -->
         </div>

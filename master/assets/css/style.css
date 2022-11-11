@@ -106,6 +106,27 @@
 /* === Import template variables === */
 /*-------------------------------------------------------------------*/
 /* === SCSS Compass Functions === */
+
+::-webkit-scrollbar {
+  width: 16px;
+  background-color: #111111;
+  }
+  ::-webkit-scrollbar-thumb{
+  background-color: #6c7293;
+  border-radius:3px;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+  background-color: #6c7293;
+  border-radius:4px;
+  }
+  ::-webkit-scrollbar-track-piece{
+  background: #111111; 
+  border-radius:0px;
+  }
+  ::-webkit-scrollbar-corner {
+  background: #d0cecb; 
+  }
+
 @-moz-keyframes flash {
   0% {
     opacity: 1; }

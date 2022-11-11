@@ -47,7 +47,7 @@
 												<li><span>ADMİN PANELİ</span>İçerik Yönetimi</li>
 												<li><span>TÜR</span>0 veya 2. El Ürün Satışı</li>
 												<li><span>TÜR</span>Yemek Satışı vb.</li>
-												<li><span>TÜR</span>Tüm Dinamik Özellikler</li>
+												<li><span>İÇERİK</span>Tüm Dinamik Özellikler</li>
 												<li><span>Term</span>28 Gün</li>
 											</ul>
 											<p><a href="contact.php" class="btn-custom-services">İLETİŞİM</a></p>
@@ -62,7 +62,7 @@
 											<h3>Mobil Uygulama</h3>
 											<ul>
 												<li><span>ADMİN PANELİ</span>İçerik Yönetimi</li>
-												<li><span>TÜR</span>Tüm E-Ticaret Özellikleri</li>
+												<li><span>İÇERİK</span>Tüm E-Ticaret Özellikleri</li>
 												<li><span>TÜR</span>Websitenizin Mobil Versiyonu</li>
 												<li><span>TÜR</span>Mobile Uyarlanabilecek Herşey</li>
 												<li><span>Term</span>35 Gün</li>

@@ -10,11 +10,11 @@
                 <div class="card">
                   <div class="card-body">
                   <div class="form-group">
-                  <h3 style="text-align:center; " class="card-title">Hakkımızda Fotoğrafı</h3>
+                  <h3 style="text-align:center; " class="card-title">Blog Fotoğraf</h3>
                 
                   <br>
                   <div style="text-align: center">
-                  <img style="max-width:50%; height: auto;" src="assets/images/aboutus.jpg" alt="about">
+                  <img style="max-width:50%; height: auto;" src="assets/images/bg_1.jpg" alt="about">
                   </div>
                   <br>
                   <div style="text-align: center">
@@ -38,20 +38,29 @@
               <div class="col-12 grid-margin stretch-card">
                 <div class="card">
                   <div class="card-body">
-                    <h3  style="text-align:center;" class="card-title">Hakkımızda Yazısı</h3>
-                    <hr size="10" color="#fff">
+                    <h3  style="text-align:center;" class="card-title">Blog Yazı</h3>
                     
                     <form class="forms-sample">
                       <div class="form-group">
                         <h4 for="exampleInputName1">Başlık</h4>
                         <input type="text" class="form-control" id="exampleInputName1" placeholder="">
                       </div>
+                   
                       <div class="form-group">
-                        <h4 for="exampleTextarea1">Yazı</h4>
-                        <textarea class="form-control" id="exampleTextarea1" rows="7"></textarea>
+                      <h4 for="exampleTextarea1">Yazı</h4>
+                      
+                    
+                        <textarea id="editor" class="form-control" rows="7"></textarea>
+                        <script>
+    CKEDITOR.replace( 'editor' );
+</script> 
+                        
                       </div>
-                      <button type="submit" class="btn btn-primary mr-2">Submit</button>
-                      <button class="btn btn-dark">Cancel</button>
+                                      
+                      <div style="text-align:center;">
+                      <button type="submit" class="btn btn-primary mr-2">Kaydet</button>
+                      <button class="btn btn-dark">İptal</button>
+                      </div>
                     </form>
                   </div>
                 </div>

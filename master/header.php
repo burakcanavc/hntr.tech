@@ -5,6 +5,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <title>hntr.tech Admin</title>
+    <script src="https://cdn.ckeditor.com/4.13.0/standard/ckeditor.js"></script>
     <!-- plugins:css -->
     <link rel="stylesheet" href="assets/vendors/mdi/css/materialdesignicons.min.css">
     <link rel="stylesheet" href="assets/vendors/css/vendor.bundle.base.css">
@@ -20,7 +21,7 @@
     <!-- Layout styles -->
     <link rel="stylesheet" href="assets/css/style.css">
     <!-- End layout styles -->
-    <link rel="shortcut icon" href="assets/images/hntr1.png" />
+    <link rel="shortcut icon" href="assets/images/h1.png" />
   </head>
   <body>
     <div class="container-scroller">
@@ -41,6 +42,60 @@
               </span>
               <span class="menu-title">Giriş Sayfası</span>
             </a>
+          </li>
+          <li class="nav-item menu-items">
+            <a class="nav-link" href="messages.php">
+              <span class="menu-icon">
+                <i class="mdi mdi-email"></i>
+              </span>
+              <span class="menu-title">Mesajlar</span>
+            </a>
+          </li>
+          <li class="nav-item nav-category">
+            <span class="nav-link">Website Ayarları</span>
+          </li>
+          <li class="nav-item menu-items">
+            <a class="nav-link" href="home.php">
+              <span class="menu-icon">
+                <i class="mdi mdi-home"></i>
+              </span>
+              <span class="menu-title">Anasayfa</span>
+            </a>
+          </li>
+          <li class="nav-item menu-items">
+            <a class="nav-link" href="about.php">
+              <span class="menu-icon">
+                <i class="mdi mdi-account-card-details"></i>
+              </span>
+              <span class="menu-title">Hakkımızda</span>
+            </a>
+          </li>
+          <li class="nav-item menu-items">
+            <a class="nav-link" href="services.php">
+              <span class="menu-icon">
+                <i class="mdi mdi-file-document-box"></i>
+              </span>
+              <span class="menu-title">Hizmetlerimiz</span>
+            </a>
+          </li>
+          <li class="nav-item menu-items">
+            <a class="nav-link" href="contact.php">
+              <span class="menu-icon">
+                <i class="mdi mdi-email"></i>
+              </span>
+              <span class="menu-title">İletişim</span>
+            </a>
+          </li>
+          <li class="nav-item menu-items">
+            <a class="nav-link" href="blog.php">
+              <span class="menu-icon">
+                <i class="mdi mdi-blogger"></i>
+              </span>
+              <span class="menu-title">Blog</span>
+            </a>
+          </li>
+          <li class="nav-item nav-category">
+            <span class="nav-link">Admin Paneli Elemanları</span>
           </li>
           <li class="nav-item menu-items">
             <a class="nav-link" data-toggle="collapse" href="#ui-basic" aria-expanded="false" aria-controls="ui-basic">
@@ -107,50 +162,7 @@
                 <li class="nav-item"> <a class="nav-link" href="register.php"> Register </a></li>
               </ul>
             </div>
-          </li>
-          <li class="nav-item nav-category">
-            <span class="nav-link">Website Ayarları</span>
-          </li>
-          <li class="nav-item menu-items">
-            <a class="nav-link" href="home.php">
-              <span class="menu-icon">
-                <i class="mdi mdi-home"></i>
-              </span>
-              <span class="menu-title">Anasayfa</span>
-            </a>
-          </li>
-          <li class="nav-item menu-items">
-            <a class="nav-link" href="about.php">
-              <span class="menu-icon">
-                <i class="mdi mdi-account-card-details"></i>
-              </span>
-              <span class="menu-title">Hakkımızda</span>
-            </a>
-          </li>
-          <li class="nav-item menu-items">
-            <a class="nav-link" href="services.php">
-              <span class="menu-icon">
-                <i class="mdi mdi-file-document-box"></i>
-              </span>
-              <span class="menu-title">Hizmetlerimiz</span>
-            </a>
-          </li>
-          <li class="nav-item menu-items">
-            <a class="nav-link" href="contact.php">
-              <span class="menu-icon">
-                <i class="mdi mdi-email"></i>
-              </span>
-              <span class="menu-title">İletişim</span>
-            </a>
-          </li>
-          <li class="nav-item menu-items">
-            <a class="nav-link" href="blog.php">
-              <span class="menu-icon">
-                <i class="mdi mdi-blogger"></i>
-              </span>
-              <span class="menu-title">Blog</span>
-            </a>
-          </li>
+          </li> 
         </ul>
       </nav>
       <!-- partial -->

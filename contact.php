@@ -47,14 +47,7 @@
 								<div class="info-wrap js-fullheight bg-primary w-100 p-md-5 p-4">
 									<h3>İletişime Geçelim</h3>
 									<p class="mb-4">Herhangi bir öneriye veya sadece konuşmaya bile açığız.</p>
-									<div class="dbox w-100 d-flex align-items-start">
-										<div class="icon d-flex align-items-center justify-content-center">
-											<span class="fa fa-map-marker"></span>
-										</div>
-										<div class="text pl-3">
-											<p><span>Adres:</span> Zafer Mahallesi, Aydın Adnan Menderes Üniversitesi Aydın MYO, Efeler/Aydın</p>
-										</div>
-									</div>
+									
 									<div class="dbox w-100 d-flex align-items-center">
 										<div class="icon d-flex align-items-center justify-content-center">
 											<span class="fa fa-paper-plane"></span>
@@ -69,6 +62,14 @@
 										</div>
 										<div class="text pl-3">
 											<p><span>Instagram:</span> <a href="https://www.instagram.com/hntr.tech/">@hntr.tech</a></p>
+										</div>
+									</div>
+									<div class="dbox w-100 d-flex align-items-start">
+										<div class="icon d-flex align-items-center justify-content-center">
+											<span class="fa fa-map-marker"></span>
+										</div>
+										<div class="text pl-3">
+											<p><span>Adres:</span> Zafer Mahallesi, Aydın Adnan Menderes Üniversitesi Aydın MYO, Efeler/Aydın</p>
 										</div>
 									</div>
 								</div>
