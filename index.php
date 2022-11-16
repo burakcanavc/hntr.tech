@@ -6,8 +6,7 @@
 				<div class="row d-flex no-gutters">
 					<div class="col-md-12 portfolio-wrap">
 						<div class="row no-gutters align-items-center">
-							<a class="col-md-6 img js-fullheight  " style="background-image: url(images/main.jpg);">
-							</a>
+						  <img class="deneme col-md-6" src="images/main.jpg" alt="main-photo" >
 							<div class="col-md-6">
 								<div class="text pt-5 pl-0 px-lg-5 pl-md-4 ftco-animate">
 									<div class="px-4 px-lg-4">
@@ -82,8 +81,7 @@
 
 					<div class="col-md-12 portfolio-wrap">
 						<div class="row no-gutters align-items-center">
-							<a class="col-md-6 order-md-last img js-fullheight" style="background-image: url(images/icerik-1.jpg);">
-							</a>
+							<img class="deneme col-md-6 order-md-last" src="images/icerik-1.jpg" alt="icerik-1-photo" >
 							<div class="col-md-6">
 								<div class="text pt-5 px-md-5 ftco-animate">
 									<div class="px-4 px-lg-4">
@@ -104,8 +102,7 @@
 
 					<div class="col-md-12 portfolio-wrap">
 						<div class="row no-gutters align-items-center">
-						<a class="col-md-6 img js-fullheight  " style="background-image: url(images/icerik-2.jpg);">
-							</a>
+						<img class="deneme col-md-6" src="images/icerik-2.jpg" alt="icerik-2-photo" >
 							<div class="col-md-6">
 								<div class="text pt-5 pl-0 px-lg-5 pl-md-4 ftco-animate">
 									<div class="px-4 px-lg-4">
@@ -126,7 +123,7 @@
 
 					<div class="col-md-12 portfolio-wrap">
 						<div class="row no-gutters align-items-center">
-						<a class="col-md-6 order-md-last img js-fullheight" style="background-image: url(images/icerik-3.jpg);">
+						<img class="deneme col-md-6 order-md-last" src="images/icerik-3.jpg" alt="icerik-3-photo" >
 							</a>
 							<div class="col-md-6">
 								<div class="text pt-5 px-md-5 ftco-animate">
@@ -148,7 +145,7 @@
 
 					<div class="col-md-12 portfolio-wrap">
 						<div class="row no-gutters align-items-center">
-						<a class="col-md-6 img js-fullheight  " style="background-image: url(images/icerik-4.jpg);">
+						<img class="deneme col-md-6" src="images/icerik-4.jpg" alt="icerik-4-photo" >
 							</a>
 							<div class="col-md-6">
 								<div class="text pt-5 pl-0 px-lg-5 pl-md-4 ftco-animate">
