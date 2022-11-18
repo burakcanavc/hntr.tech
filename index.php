@@ -87,7 +87,7 @@
 									<div class="px-4 px-lg-4">
 										<div class="desc text-md-right">
 											<div class="top">
-												<h2 class="mb-4"><a href="gallery.html">Hakkımızda</a></h2>
+												<h2 class="mb-4"><a href="about.php">Hakkımızda</a></h2>
 											</div>
 											<div class="absolute">
 												<p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove.</p>
@@ -108,12 +108,12 @@
 									<div class="px-4 px-lg-4">
 										<div class="desc">
 											<div class="top">
-												<h2 class="mb-4"><a href="gallery.html">Hizmetlerimiz</a></h2>
+												<h2 class="mb-4"><a href="services.php">Hizmetlerimiz</a></h2>
 											</div>
 											<div class="absolute">
 												<p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove.</p>
 											</div>
-											<p><a href="single.html" class="custom-btn">HİZMETLERİMİZ'E GİT</a></p>
+											<p><a href="services.php" class="custom-btn">HİZMETLERİMİZ'E GİT</a></p>
 										</div>
 									</div>
 								</div>
@@ -130,12 +130,12 @@
 									<div class="px-4 px-lg-4">
 										<div class="desc text-md-right">
 											<div class="top">
-												<h2 class="mb-4"><a href="gallery.html">İletişim</a></h2>
+												<h2 class="mb-4"><a href="contact.php">İletişim</a></h2>
 											</div>
 											<div class="absolute">
 												<p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove.</p>
 											</div>
-											<p><a href="single.html" class="custom-btn">İLETİŞİM'E GİT</a></p>
+											<p><a href="contact.php" class="custom-btn">İLETİŞİM'E GİT</a></p>
 										</div>
 									</div>
 								</div>
@@ -152,12 +152,12 @@
 									<div class="px-4 px-lg-4">
 										<div class="desc">
 											<div class="top">
-												<h2 class="mb-4"><a href="gallery.html">Blog</a></h2>
+												<h2 class="mb-4"><a href="blog.php">Blog</a></h2>
 											</div>
 											<div class="absolute">
 												<p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove.</p>
 											</div>
-											<p><a href="single.html" class="custom-btn">BLOG'A GİT</a></p>
+											<p><a href="blog.php" class="custom-btn">BLOG'A GİT</a></p>
 										</div>
 									</div>
 								</div>

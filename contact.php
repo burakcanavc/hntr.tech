@@ -1,5 +1,16 @@
 
-<?php include 'header.php'; ?>
+<?php
+include 'header.php';
+
+try{
+	global $db;
+$db = new PDO("mysql:host=localhost;dbname=hntr.tech;charset=utf8", "root","");
+}catch(PDOException $e){
+	die("OLMADI".$e->getMessage());
+}
+
+$contact= $db->query("SELECT * FROM tbl_contact WHERE id = 1")->fetch(PDO::FETCH_ASSOC);
+?>
 			<div id="colorlib-main">
 				<section class="ftco-section ftco-no-pt ftco-no-pb">
 					<div class="container px-md-0">
@@ -53,7 +64,7 @@
 											<span class="fa fa-paper-plane"></span>
 										</div>
 										<div class="text pl-3">
-											<p><span>Email:</span> <a href="mailto:info@yoursite.com">info@hntr.tech</a></p>
+											<p><span>Email:</span> <a href="mailto:<?= $contact['email']; ?>"><?= $contact['email']; ?></a></p>
 										</div>
 									</div>
 									<div class="dbox w-100 d-flex align-items-center">
@@ -61,7 +72,7 @@
 											<span class="fa fa-instagram"></span>
 										</div>
 										<div class="text pl-3">
-											<p><span>Instagram:</span> <a href="https://www.instagram.com/hntr.tech/">@hntr.tech</a></p>
+											<p><span>Instagram:</span> <a href="https://www.instagram.com/<?= $contact['instagram']; ?>/"><?= $contact['instagram']; ?></a></p>
 										</div>
 									</div>
 									<div class="dbox w-100 d-flex align-items-start">
@@ -69,14 +80,14 @@
 											<span class="fa fa-map-marker"></span>
 										</div>
 										<div class="text pl-3">
-											<p><span>Adres:</span> Zafer Mahallesi, Aydın Adnan Menderes Üniversitesi Aydın MYO, Efeler/Aydın</p>
+											<p><span>Adres:</span> <?= $contact['adres']; ?></p>
 										</div>
 									</div>
 								</div>
 							</div>
 						</div>
-						<div class="row d-flex no-gutters">
-							<div id="map" class="map"></div>
+						<div class="harita">
+						<iframe src="<?= $contact['iframe_link']; ?>" width="1150" height="500" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
 						</div>
 					</div>
 				</section>

@@ -1,22 +1,33 @@
 
-<?php include 'header.php'; ?>
+<?php include 'header.php'; 
+
+try{
+	global $db;
+$db = new PDO("mysql:host=localhost;dbname=hntr.tech;charset=utf8", "root","");
+}catch(PDOException $e){
+	die("OLMADI".$e->getMessage());
+}
+
+$about= $db->query("SELECT * FROM tbl_about WHERE id = 1")->fetch(PDO::FETCH_ASSOC);
+$team= $db->query("SELECT * FROM tbl_team WHERE id = 1")->fetch(PDO::FETCH_ASSOC);
+
+?>
 			<div id="colorlib-main">
 				<section class="ftco-about img ftco-section ftco-no-pt ftco-no-pb" id="about-section">
 					<div class="container-fluid px-0">
 						<div class="row d-flex">
 							<div class="col-md-6 d-flex">
-								<div class="img d-flex align-self-stretch align-items-center js-fullheight" style="background-image:url(images/aboutus.jpg);">
-								</div>
+								<img class="deneme img d-flex align-self-stretch align-items-center " src="<?= $about['img']; ?>" alt="about-photo">
 							</div>
 							<div class="col-md-6 d-flex align-items-center">
 								<div class="text px-4 pt-5 pt-md-0 px-md-4 pr-md-5 ftco-animate">
-									<h2 class="mb-4"><span>hntr.tech</span></h2>
-									<p>A small river named Duden flows by their place and supplies it with the necessary regelialia. It is a paradisematic country, in which roasted parts of sentences fly into your mouth. It is a paradisematic country, in which roasted parts of sentences fly into your mouth.</p>
+									<h2 class="mb-4"><span><?= $about['title']; ?></span></h2>
+									<p>  <?= $about['text']; ?>  </p>
 									<div class="team-wrap row mt-4">
 										<div class="col-md-4 team">
-											<div class="img" style="background-image: url(images/about2.jpg);"></div>
-											<h3>Burakcan Avcı</h3>
-											<span></span>CEO/Yazılımcı
+											<div class="img" style="background-image: url(<?= $team['img']; ?>);"></div>
+											<h3><?= $team['name']; ?></h3>
+											<span></span><?= $team['department']; ?>
 										</div>
 									</div>
 								</div>
