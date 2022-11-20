@@ -17,7 +17,7 @@
 									
 											</div>
 											<div class="animation_text">
-											<h2>&nbsp;&nbsp;&nbsp;&nbsp;<span class="typewrite" data-period="2000" data-words='[ " Hoşgeldiniz"]'></span></h2>
+						 					<h2>&nbsp;&nbsp;&nbsp;&nbsp;<span class="typewrite" data-period="2000" data-words='[ " Hoşgeldiniz"]'></span></h2>
                                            </div><br>
                                             <script>
                                             var Text = function(el, toRotate, period) {
