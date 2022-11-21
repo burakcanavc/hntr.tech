@@ -1,12 +1,17 @@
 
-<?php include 'header.php'; ?>
+<?php include 'header.php';
+require 'classes/db.php';
+
+$db=new Database();
+$myQuery=$db->getRow(" Call sp_Home()");	
+?>
 	<div id="colorlib-main">
 		<section class="ftco-section ftco-no-pt ftco-no-pb">
 			<div class="container px-md-0">
 				<div class="row d-flex no-gutters">
 					<div class="col-md-12 portfolio-wrap">
 						<div class="row no-gutters align-items-center">
-						  <img class="deneme col-md-6" src="images/main.jpg" alt="main-photo" >
+						  <img class="deneme col-md-6" src="images/<?php echo $myQuery->img_main; ?>" alt="main-photo" >
 							<div class="col-md-6">
 								<div class="text pt-5 pl-0 px-lg-5 pl-md-4 ftco-animate">
 									<div class="px-4 px-lg-4">
@@ -81,7 +86,7 @@
 
 					<div class="col-md-12 portfolio-wrap">
 						<div class="row no-gutters align-items-center">
-							<img class="deneme col-md-6 order-md-last" src="images/icerik-1.jpg" alt="icerik-1-photo" >
+							<img class="deneme col-md-6 order-md-last" src="images/<?php echo $myQuery->img_content1; ?>" alt="icerik-1-photo" >
 							<div class="col-md-6">
 								<div class="text pt-5 px-md-5 ftco-animate">
 									<div class="px-4 px-lg-4">
@@ -102,7 +107,7 @@
 
 					<div class="col-md-12 portfolio-wrap">
 						<div class="row no-gutters align-items-center">
-						<img class="deneme col-md-6" src="images/icerik-2.jpg" alt="icerik-2-photo" >
+						<img class="deneme col-md-6" src="images/<?php echo $myQuery->img_content2; ?>" alt="icerik-2-photo" >
 							<div class="col-md-6">
 								<div class="text pt-5 pl-0 px-lg-5 pl-md-4 ftco-animate">
 									<div class="px-4 px-lg-4">
@@ -123,7 +128,7 @@
 
 					<div class="col-md-12 portfolio-wrap">
 						<div class="row no-gutters align-items-center">
-						<img class="deneme col-md-6 order-md-last" src="images/icerik-3.jpg" alt="icerik-3-photo" >
+						<img class="deneme col-md-6 order-md-last" src="images/<?php echo $myQuery->img_content3; ?>" alt="icerik-3-photo" >
 							</a>
 							<div class="col-md-6">
 								<div class="text pt-5 px-md-5 ftco-animate">
@@ -145,7 +150,7 @@
 
 					<div class="col-md-12 portfolio-wrap">
 						<div class="row no-gutters align-items-center">
-						<img class="deneme col-md-6" src="images/icerik-4.jpg" alt="icerik-4-photo" >
+						<img class="deneme col-md-6" src="images/<?php echo $myQuery->img_content4; ?>" alt="icerik-4-photo" >
 							</a>
 							<div class="col-md-6">
 								<div class="text pt-5 pl-0 px-lg-5 pl-md-4 ftco-animate">

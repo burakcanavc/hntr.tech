@@ -1,9 +1,14 @@
-     <?php include 'header.php'; ?>
-      <?php include 'navbar.php'; ?>
+     <?php
+     require 'header.php';
+     require '../classes/func.php';
+     
+    if(!(isset($_SESSION["id"]))){
+
+    }
+
+      ?>
         <div class="main-panel">
           <div class="content-wrapper">
-            
-            
             
             <div class="row">
               <div class="col-xl-3 col-sm-6 grid-margin stretch-card">
@@ -190,8 +195,7 @@
                 </div>
               </div>
             </div>
-            ""
-            
+        
             <div class="row">
               <div class="col-12">
                 <div class="card">

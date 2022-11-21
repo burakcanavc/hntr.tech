@@ -1,5 +1,4 @@
-<?php include 'header.php'; ?>
-<?php include 'navbar.php'; ?>
+<?php require 'header.php'; ?>
         <!-- partial -->
         <div class="main-panel">
           <div class="content-wrapper">

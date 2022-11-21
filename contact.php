@@ -1,9 +1,9 @@
 
 <?php
-include 'header.php';
-include 'classes/db.php';
+require 'header.php';
+require 'classes/db.php';
 
-$db=new Database;
+$db=new Database();
 $myQuery=$db->getRow(" Call sp_Contact()");	
 ?>
 			<div id="colorlib-main">
