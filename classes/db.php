@@ -36,13 +36,13 @@ public function connect(){
     }
 }/* ↑ fonksiyonun sonu ↑ */
 
-/* ↓ bağlantıyı başlatan fonksiyon ↓ */
+/* ↓ bağlantıyı başlatan construct fonksiyonu ↓ */
 public function __construct (){ 
 
     $this->connect();
 }/* ↑ fonksiyonun sonu ↑ */
 
-/* ↓ tekrarları engellemek için oluşturulmuş veritabanı fonksiyonu ↓ */
+/* ↓ yazım tekrarlarını önlemek için oluşturulmuş veritabanı fonksiyonu ↓ */
 private function myQuery($query,$params=null){
     
         if(is_null($params)){

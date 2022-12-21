@@ -2,7 +2,6 @@
 
 require "db.php";
 
-
 /* ↓ sınıfın bağlangıcı ↓ */
 class Login extends Database{
 

@@ -1,6 +1,6 @@
 
-<?php include 'header.php';
-require 'classes/db.php';
+<?php
+include 'header.php';
 
 $db=new Database();
 $myQuery=$db->getRow(" Call sp_Home()");	
@@ -18,7 +18,7 @@ $myQuery=$db->getRow(" Call sp_Home()");
 										<div class="desc">
 											<div class="top">
 												<h2>Merhaba</h2><br>
-												<h2 style="color:#f3c623;">&nbsp;&nbsp;hntr.tech 'e</h2>
+												<h2 style="color:#f3c623;">&nbsp;&nbsp;<?php echo $myQuery->main_title; ?> 'e</h2>
 									
 											</div>
 											<div class="animation_text">

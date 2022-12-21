@@ -1,4 +1,10 @@
-<?php require 'header.php'; ?>
+<?php
+require 'header.php'; 
+require '../classes/db.php';
+
+$db=new Database();
+$myQuery=$db->getRow(" Call sp_Contact()");
+?>
 
 <!-- partial -->
 <div class="main-panel">
@@ -13,20 +19,28 @@
                     
                     <form class="forms-sample">
                       <div class="form-group">
-                        <h4 for="exampleInputName1">Email</h4>
-                        <input type="text" class="form-control" id="exampleInputName1" placeholder="">
+                        <h4 for="exampleInputName1">Mail-1</h4>
+                        <input type="text" class="form-control" id="exampleInputName1" value="<?php echo $myQuery->email; ?>">
+                      </div>
+                      <div class="form-group">
+                        <h4 for="exampleInputName1">Mail-2</h4>
+                        <input type="text" class="form-control" id="exampleInputName1" value="<?php echo $myQuery->email2; ?>">
                       </div>
                       <div class="form-group">
                         <h4 for="exampleInputName1">Instagram</h4>
-                        <input type="text" class="form-control" id="exampleInputName1" placeholder="">
+                        <input type="text" class="form-control" id="exampleInputName1" value="<?php echo $myQuery->instagram; ?>">
+                      </div>
+                      <div class="form-group">
+                        <h4 for="exampleInputName1">LinkedIn</h4>
+                        <input type="text" class="form-control" id="exampleInputName1" value="<?php echo $myQuery->linkedin; ?>">
                       </div>
                       <div class="form-group">
                         <h4 for="exampleInputName1">Adres</h4>
-                        <input type="text" class="form-control" id="exampleInputName1" placeholder="">
+                        <input type="text" class="form-control" id="exampleInputName1" value="<?php echo $myQuery->adres; ?>">
                       </div>
                       <div class="form-group">
-                        <h4 for="exampleInputName1">Harita Koordinatı</h4>
-                        <input type="text" class="form-control" id="exampleInputName1" placeholder="">
+                        <h4 for="exampleInputName1">Google Maps Iframe Linki</h4>
+                        <input type="text" class="form-control" id="exampleInputName1" value="<?php echo $myQuery->iframe_link; ?>">
                       </div>
                      <div style="text-align:center;">
                       <button type="submit" class="btn btn-primary mr-2">Kaydet</button>

@@ -1,4 +1,10 @@
-<?php require 'header.php'; ?>
+<?php
+require 'header.php';
+require '../classes/db.php';
+
+$db=new Database();
+$myQuery=$db->getRow("Call sp_About()");
+?>
 
 <!-- partial -->
 <div class="main-panel">
@@ -13,7 +19,7 @@
                 
                   <br>
                   <div style="text-align: center">
-                  <img style="max-width:50%; height: auto;" src="assets/images/aboutus.jpg" alt="about">
+                  <img style="max-width:50%; height: auto;" src="../images/<?php echo $myQuery->img; ?>" alt="about">
                   </div>
                   <br>
                   <div style="text-align: center">
@@ -43,11 +49,11 @@
                     <form class="forms-sample">
                       <div class="form-group">
                         <h4 for="exampleInputName1">Başlık</h4>
-                        <input type="text" class="form-control" id="exampleInputName1" placeholder="">
+                        <input type="text" class="form-control" id="exampleInputName1" value="<?php echo $myQuery->title; ?>">
                       </div>
                       <div class="form-group">
                         <h4 for="exampleTextarea1">Yazı</h4>
-                        <textarea class="form-control" id="exampleTextarea1" rows="7"></textarea>
+                        <textarea class="form-control" id="exampleTextarea1" rows="7"><?php echo $myQuery->text; ?></textarea>
                       </div>
                       <div style="text-align:center;">
                       <button type="submit" class="btn btn-primary mr-2">Kaydet</button>
@@ -68,7 +74,7 @@
                 
                   <br>
                   <div style="text-align: center">
-                  <img style="max-width:40%; height: auto;" src="assets/images/about.jpg" alt="about">
+                  <img style="max-width:40%; height: auto;" src="../images/<?php echo $myQuery->team_img; ?>" alt="about">
                   </div>
                   <br>
                   <div style="text-align: center">
@@ -88,11 +94,11 @@
                     <form class="forms-sample">
                       <div class="form-group">
                         <h4 for="exampleInputName1">İsim</h4>
-                        <input type="text" class="form-control" id="exampleInputName1" placeholder="">
+                        <input type="text" class="form-control" id="exampleInputName1" value="<?php echo $myQuery->team_name; ?>">
                       </div>
                       <div class="form-group">
                         <h4 for="exampleInputName1">İş Pozisyonu</h4>
-                        <input type="text" class="form-control" id="exampleInputName1" placeholder="">
+                        <input type="text" class="form-control" id="exampleInputName1" value="<?php echo $myQuery->team_dpt; ?>">
                       </div>
                      <div style="text-align:center;">
                       <button type="submit" class="btn btn-primary mr-2">Kaydet</button>

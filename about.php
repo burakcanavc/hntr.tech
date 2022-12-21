@@ -3,7 +3,6 @@
 
 require 'header.php'; 
 
-require 'classes/db.php';
 $db=new Database();
 $myQuery=$db->getRow("Call sp_About()");
 ?>
@@ -20,7 +19,7 @@ $myQuery=$db->getRow("Call sp_About()");
 									<p>  <?php echo $myQuery->text; ?>  </p>
 									<div class="team-wrap row mt-4">
 										<div class="col-md-4 team">
-											<div class="img" style="background-image: url(<?php echo $myQuery->team_img; ?>);"></div>
+											<div class="img" style="background-image: url(images/<?php echo $myQuery->team_img; ?>);"></div>
 											<h3><?php echo $myQuery->team_name; ?></h3>
 											<span></span><?php echo $myQuery->team_dpt; ?>
 										</div>

@@ -3,9 +3,8 @@
      require '../classes/func.php';
      
     if(!(isset($_SESSION["id"]))){
-
+    
     }
-
       ?>
         <div class="main-panel">
           <div class="content-wrapper">

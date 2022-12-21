@@ -1,4 +1,10 @@
-<?php require 'header.php'; ?>
+<?php
+require 'header.php';
+require '../classes/db.php';
+
+$db=new Database();
+$myQuery=$db->getRow(" Call sp_Home()");
+?>
 
 <!-- partial -->
 <div class="main-panel">
@@ -10,11 +16,11 @@
                 <div class="card">
                   <div class="card-body">
                   <div class="form-group">
-                  <h3 style="text-align:center; " class="card-title">Giriş Fotoğrafı</h3>
+                  <h3 style="text-align:center; " class="card-title">Ana Fotoğraf</h3>
                 
                   <br>
                   <div style="text-align: center">
-                  <img style="max-width:50%; height: auto;" src="assets/images/main.jpg" alt="about">
+                  <img style="max-width:50%; height: auto;" src="../images/<?php echo $myQuery->img_main; ?>" alt="about">
                   </div>
                   <br>
                   <div style="text-align: center">
@@ -29,16 +35,12 @@
                           <br><br>
                           <hr size="10" color="#fff">
                           <br>
-                          <h3  style="text-align:center;" class="card-title">Giriş Yazısı</h3>
+                          <h3  style="text-align:center;" class="card-title">Ana Yazı</h3>
               
                     <form class="forms-sample">
                       <div class="form-group">
-                        <h4 for="exampleInputName1">Başlık</h4>
-                        <input type="text" class="form-control" id="exampleInputName1" placeholder="">
-                      </div>
-                      <div class="form-group">
-                        <h4 for="exampleTextarea1">Yazı</h4>
-                        <textarea class="form-control" id="exampleTextarea1" rows="7"></textarea>
+                        <h4 for="exampleInputName1">Başlık Site Adı</h4>
+                        <input type="text" class="form-control" id="exampleInputName1" value="<?php echo $myQuery->main_title; ?>">
                       </div>
                       <div style="text-align:center;">
                       <button type="submit" class="btn btn-primary mr-2">Kaydet</button>
@@ -61,7 +63,7 @@
                 
                   <br>
                   <div style="text-align: center">
-                  <img style="max-width:50%; height: auto;" src="assets/images/icerik-1.jpg" alt="about">
+                  <img style="max-width:50%; height: auto;" src="../images/<?php echo $myQuery->img_content1; ?>" alt="about">
                   </div>
                   <br>
                   <div style="text-align: center">
@@ -108,7 +110,7 @@
                 
                   <br>
                   <div style="text-align: center">
-                  <img style="max-width:50%; height: auto;" src="assets/images/icerik-2.jpg" alt="about">
+                  <img style="max-width:50%; height: auto;" src="../images/<?php echo $myQuery->img_content2; ?>" alt="about">
                   </div>
                   <br>
                   <div style="text-align: center">
@@ -155,7 +157,7 @@
                 
                   <br>
                   <div style="text-align: center">
-                  <img style="max-width:50%; height: auto;" src="assets/images/icerik-3.jpg" alt="about">
+                  <img style="max-width:50%; height: auto;" src="../images/<?php echo $myQuery->img_content3; ?>" alt="about">
                   </div>
                   <br>
                   <div style="text-align: center">
@@ -202,7 +204,7 @@
                 
                   <br>
                   <div style="text-align: center">
-                  <img style="max-width:50%; height: auto;" src="assets/images/icerik-4.jpg" alt="about">
+                  <img style="max-width:50%; height: auto;" src="../images/<?php echo $myQuery->img_content4; ?>" alt="about">
                   </div>
                   <br>
                   <div style="text-align: center">
