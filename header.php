@@ -1,7 +1,7 @@
 <?php
 require 'classes/db.php';
-$db=new Database();
-$myQuery=$db->getRow(" Call sp_About()");
+$db1=new Database();
+$myQuery1=$db1->getRow(" Call sp_About()");
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -29,7 +29,7 @@ $myQuery=$db->getRow(" Call sp_About()");
 	<a href="#" class="js-colorlib-nav-toggle colorlib-nav-toggle"><i></i></a>
 	<aside id="colorlib-aside" role="complementary" class="js-fullheight">
 
-		<h1 id="colorlib-logo" class="mb-4 mb-md-5"><a href="index.html" style="background-image: url(images/bg_2.jpg);"><?php echo $myQuery->site_name; ?></a></h1>
+		<h1 id="colorlib-logo" class="mb-4 mb-md-5"><a href="index.html" style="background-image: url(images/bg_2.jpg);"><?php echo $myQuery1->site_name; ?></a></h1>
 		<nav id="colorlib-main-menu" role="navigation">
 			<ul>
 				<li class="colorlib-active"><a href="index.php">ANASAYFA</a></li>

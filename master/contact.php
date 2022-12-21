@@ -1,6 +1,5 @@
 <?php
-require 'header.php'; 
-require '../classes/db.php';
+require 'header.php';
 
 $db=new Database();
 $myQuery=$db->getRow(" Call sp_Contact()");

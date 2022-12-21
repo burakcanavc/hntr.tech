@@ -92,10 +92,10 @@ $myQuery=$db->getRow(" Call sp_Home()");
 									<div class="px-4 px-lg-4">
 										<div class="desc text-md-right">
 											<div class="top">
-												<h2 class="mb-4"><a href="about.php">Hakkımızda</a></h2>
+												<h2 class="mb-4"><a href="about.php"><?php echo $myQuery->title_content1; ?></a></h2>
 											</div>
 											<div class="absolute">
-												<p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove.</p>
+												<p><?php echo $myQuery->text_content1; ?></p>
 											</div>
 											<p><a href="about.php" class="custom-btn">HAKKIMIZDA'YA GİT</a></p>
 										</div>
@@ -113,10 +113,10 @@ $myQuery=$db->getRow(" Call sp_Home()");
 									<div class="px-4 px-lg-4">
 										<div class="desc">
 											<div class="top">
-												<h2 class="mb-4"><a href="services.php">Hizmetlerimiz</a></h2>
+												<h2 class="mb-4"><a href="services.php"><?php echo $myQuery->title_content2; ?></a></h2>
 											</div>
 											<div class="absolute">
-												<p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove.</p>
+												<p><?php echo $myQuery->text_content2; ?></p>
 											</div>
 											<p><a href="services.php" class="custom-btn">HİZMETLERİMİZ'E GİT</a></p>
 										</div>
@@ -135,10 +135,10 @@ $myQuery=$db->getRow(" Call sp_Home()");
 									<div class="px-4 px-lg-4">
 										<div class="desc text-md-right">
 											<div class="top">
-												<h2 class="mb-4"><a href="contact.php">İletişim</a></h2>
+												<h2 class="mb-4"><a href="contact.php"><?php echo $myQuery->title_content3; ?></a></h2>
 											</div>
 											<div class="absolute">
-												<p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove.</p>
+												<p><?php echo $myQuery->text_content3; ?></p>
 											</div>
 											<p><a href="contact.php" class="custom-btn">İLETİŞİM'E GİT</a></p>
 										</div>
@@ -157,10 +157,10 @@ $myQuery=$db->getRow(" Call sp_Home()");
 									<div class="px-4 px-lg-4">
 										<div class="desc">
 											<div class="top">
-												<h2 class="mb-4"><a href="blog.php">Blog</a></h2>
+												<h2 class="mb-4"><a href="blog.php"><?php echo $myQuery->title_content4; ?></a></h2>
 											</div>
 											<div class="absolute">
-												<p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove.</p>
+												<p><?php echo $myQuery->text_content4; ?></p>
 											</div>
 											<p><a href="blog.php" class="custom-btn">BLOG'A GİT</a></p>
 										</div>
