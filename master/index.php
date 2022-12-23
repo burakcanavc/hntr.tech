@@ -1,6 +1,5 @@
      <?php
      require 'header.php';
-     require '../classes/func.php';
      
     if(!(isset($_SESSION["id"]))){
     

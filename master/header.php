@@ -1,5 +1,6 @@
 <?php
 require '../classes/db.php';
+require '../classes/safe.php';
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -108,7 +109,7 @@ require '../classes/db.php';
             <div class="collapse" id="auth">
               <ul class="nav flex-column sub-menu">
                 <li class="nav-item"> <a class="nav-link" href="blog.php"> Blog Oluştur </a></li>
-                <li class="nav-item"> <a class="nav-link" href="error-404.php"> Blog Yazıları </a></li>
+                <li class="nav-item"> <a class="nav-link" href="blog-edit.php"> Blog Yazıları </a></li>
               </ul>
             </div>
           </li> 

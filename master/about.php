@@ -3,6 +3,14 @@ require 'header.php';
 
 $db=new Database();
 $myQuery=$db->getRow("Call sp_About()");
+$db1=new Database();
+if($_SERVER["REQUEST_METHOD"] == 'POST' && isset($_POST['about_submit'])){
+$baslik = security("baslik");
+$yazi = security("yazi");
+$update=$db1->Update('UPDATE tbl_about SET title=?, text=?',array($baslik,$yazi));
+}
+
+
 ?>
 
 <!-- partial -->
@@ -45,17 +53,22 @@ $myQuery=$db->getRow("Call sp_About()");
                     <h3  style="text-align:center;" class="card-title">Hakkımızda Yazısı</h3>
                     
                     
-                    <form class="forms-sample">
+                    <form class="forms-sample" method="POST" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']) ?>">
                       <div class="form-group">
                         <h4 for="exampleInputName1">Başlık</h4>
-                        <input type="text" class="form-control" id="exampleInputName1" value="<?php echo $myQuery->title; ?>">
+                        <input name="baslik" type="text" class="form-control" id="exampleInputName1" value="<?php echo $myQuery->title; ?>">
                       </div>
                       <div class="form-group">
                         <h4 for="exampleTextarea1">Yazı</h4>
-                        <textarea class="form-control" id="exampleTextarea1" rows="7"><?php echo $myQuery->text; ?></textarea>
+                        <textarea name="yazi" class="form-control" id="exampleTextarea1" rows="7"><?php echo $myQuery->text; ?></textarea>
                       </div>
+
+                        <div>
+                          <?php// echo $message; ?>
+                        </div>
+
                       <div style="text-align:center;">
-                      <button type="submit" class="btn btn-primary mr-2">Kaydet</button>
+                      <button name="about_submit" type="submit" class="btn btn-primary mr-2">Kaydet</button>
                       <button class="btn btn-dark">İptal</button>
                       </div>
                     </form>
