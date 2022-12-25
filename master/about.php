@@ -1,22 +1,60 @@
 <?php
 require 'header.php';
 
+/* Veritabanı tablo çağırma işlemi */
 $db=new Database();
 $myQuery=$db->getRow("Call sp_About()");
-$db1=new Database();
+/* İşlem sonu */
+
+/* Hakkımızda başlık ve yazı update işlemi */
 if($_SERVER["REQUEST_METHOD"] == 'POST' && isset($_POST['about_submit'])){
 $baslik = security("baslik");
 $yazi = security("yazi");
-$update=$db1->Update('UPDATE tbl_about SET title=?, text=?',array($baslik,$yazi));
-}
+$update=$db->Update('UPDATE tbl_about SET title=?, text=?',array($baslik,$yazi));
+if($update){
+  echo '<meta http-equiv="refresh" content="0;URL=http://localhost/hntr.tech/master/about.php">';
+ }
+}/* İşlem sonu */
 
-
+/* Ekip isim ve iş pozisyonu update işlemi */
+if($_SERVER["REQUEST_METHOD"] == 'POST' && isset($_POST['team_submit'])){
+  $ekip_isim = security("ekip_isim");
+  $ekip_dpt = security("ekip_dpt");
+  $update=$db->Update('UPDATE tbl_about SET team_name=?, team_dpt=?',array($ekip_isim,$ekip_dpt));
+  if($update){
+    echo '<meta http-equiv="refresh" content="0;URL=http://localhost/hntr.tech/master/about.php">';
+   }
+  }/* İşlem sonu */
 ?>
 
 <!-- partial -->
 <div class="main-panel">
           <div class="content-wrapper">
-           
+           <!--about text -->
+           <div class="col-12 grid-margin stretch-card">
+                <div class="card">
+                  <div class="card-body">
+                    <h3  style="text-align:center;" class="card-title">Hakkımızda Yazısı</h3>
+                    
+                    
+                    <form class="forms-sample" method="POST">
+                      <div class="form-group">
+                        <h4 for="exampleInputName1">Başlık</h4>
+                        <input name="baslik" type="text" class="form-control" id="exampleInputName1" value="<?php echo $myQuery->title; ?>">
+                      </div>
+                      <div class="form-group">
+                        <h4 for="exampleTextarea1">Yazı</h4>
+                        <textarea name="yazi" class="form-control" id="exampleTextarea1" rows="7"><?php echo $myQuery->text; ?></textarea>
+                      </div>
+                      <div style="text-align:center;">
+                      <button name="about_submit" type="submit" class="btn btn-primary mr-2">Kaydet</button>
+                      <button class="btn btn-dark">İptal</button>
+                      </div>
+                    </form>
+                  </div>
+                </div>
+              </div>
+              <!-- end about text -->
              <!--about image -->
              <div class="col-12 grid-margin stretch-card">
                 <div class="card">
@@ -46,36 +84,6 @@ $update=$db1->Update('UPDATE tbl_about SET title=?, text=?',array($baslik,$yazi)
               </div>
               <!-- end about image -->
 
-              <!--about text -->
-              <div class="col-12 grid-margin stretch-card">
-                <div class="card">
-                  <div class="card-body">
-                    <h3  style="text-align:center;" class="card-title">Hakkımızda Yazısı</h3>
-                    
-                    
-                    <form class="forms-sample" method="POST" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']) ?>">
-                      <div class="form-group">
-                        <h4 for="exampleInputName1">Başlık</h4>
-                        <input name="baslik" type="text" class="form-control" id="exampleInputName1" value="<?php echo $myQuery->title; ?>">
-                      </div>
-                      <div class="form-group">
-                        <h4 for="exampleTextarea1">Yazı</h4>
-                        <textarea name="yazi" class="form-control" id="exampleTextarea1" rows="7"><?php echo $myQuery->text; ?></textarea>
-                      </div>
-
-                        <div>
-                          <?php// echo $message; ?>
-                        </div>
-
-                      <div style="text-align:center;">
-                      <button name="about_submit" type="submit" class="btn btn-primary mr-2">Kaydet</button>
-                      <button class="btn btn-dark">İptal</button>
-                      </div>
-                    </form>
-                  </div>
-                </div>
-              </div>
-              <!-- end about text -->
               <!--about image -->
              
              <div class="col-12 grid-margin stretch-card">
@@ -103,17 +111,17 @@ $update=$db1->Update('UPDATE tbl_about SET title=?, text=?',array($baslik,$yazi)
                           <br>
                           <h3  style="text-align:center;" class="card-title">Ekip-1 Yazı</h3>
               
-                    <form class="forms-sample">
+                    <form class="forms-sample" method="POST">
                       <div class="form-group">
                         <h4 for="exampleInputName1">İsim</h4>
-                        <input type="text" class="form-control" id="exampleInputName1" value="<?php echo $myQuery->team_name; ?>">
+                        <input type="text" name="ekip_isim" class="form-control" id="exampleInputName1" value="<?php echo $myQuery->team_name; ?>">
                       </div>
                       <div class="form-group">
                         <h4 for="exampleInputName1">İş Pozisyonu</h4>
-                        <input type="text" class="form-control" id="exampleInputName1" value="<?php echo $myQuery->team_dpt; ?>">
+                        <input type="text" name="ekip_dpt" class="form-control" id="exampleInputName1" value="<?php echo $myQuery->team_dpt; ?>">
                       </div>
                      <div style="text-align:center;">
-                      <button type="submit" class="btn btn-primary mr-2">Kaydet</button>
+                      <button type="submit" name="team_submit" class="btn btn-primary mr-2">Kaydet</button>
                       <button class="btn btn-dark">İptal</button>
                       </div>
                     </form>
