@@ -12,7 +12,7 @@ $db4=new Database();
 $myQuery4=$db4->getRow(" Call sp_Service4()");
 /* İşlem sonu */
 
-/* İçerik-1 başlık ve yazı update işlemi */
+/* Hizmet-1 başlık ve yazı update işlemi */
 if($_SERVER["REQUEST_METHOD"] == 'POST' && isset($_POST['service1_submit'])){
   $hizmet1_anabaslik = security("hizmet1_anabaslik");
   $hizmet1_baslik1 = security("hizmet1_baslik1");
@@ -33,7 +33,7 @@ if($_SERVER["REQUEST_METHOD"] == 'POST' && isset($_POST['service1_submit'])){
    }
   }/* İşlem sonu */
 
-/* İçerik-2 başlık ve yazı update işlemi */
+/* Hizmet-2 başlık ve yazı update işlemi */
 if($_SERVER["REQUEST_METHOD"] == 'POST' && isset($_POST['service2_submit'])){
   $hizmet2_anabaslik = security("hizmet2_anabaslik");
   $hizmet2_baslik1 = security("hizmet2_baslik1");
@@ -54,7 +54,7 @@ if($_SERVER["REQUEST_METHOD"] == 'POST' && isset($_POST['service2_submit'])){
    }
   }/* İşlem sonu */
 
-  /* İçerik-3 başlık ve yazı update işlemi */
+  /* Hizmet-3 başlık ve yazı update işlemi */
 if($_SERVER["REQUEST_METHOD"] == 'POST' && isset($_POST['service3_submit'])){
   $hizmet3_anabaslik = security("hizmet3_anabaslik");
   $hizmet3_baslik1 = security("hizmet3_baslik1");
@@ -75,7 +75,7 @@ if($_SERVER["REQUEST_METHOD"] == 'POST' && isset($_POST['service3_submit'])){
    }
   }/* İşlem sonu */
 
-  /* İçerik-4 başlık ve yazı update işlemi */
+  /* Hizmet-4 başlık ve yazı update işlemi */
 if($_SERVER["REQUEST_METHOD"] == 'POST' && isset($_POST['service4_submit'])){
   $hizmet4_anabaslik = security("hizmet4_anabaslik");
   $hizmet4_baslik1 = security("hizmet4_baslik1");
