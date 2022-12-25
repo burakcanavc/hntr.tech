@@ -1,8 +1,12 @@
 <?php
 require 'header.php';
 
+/* Veritabanı tablo çağırma işlemi */
 $db=new Database();
 $myQuery=$db->getRow(" Call sp_Contact()");
+/* İşlem sonu */
+
+/* İletişim bölümü update işlemi */
 if($_SERVER["REQUEST_METHOD"] == 'POST' && isset($_POST['contact_submit'])){
   $mail1 = security("mail1");
   $mail2 = security("mail2");
@@ -15,7 +19,7 @@ if($_SERVER["REQUEST_METHOD"] == 'POST' && isset($_POST['contact_submit'])){
   if($update){
    echo '<meta http-equiv="refresh" content="0;URL=http://localhost/hntr.tech/master/contact.php">';
   }
-  }
+  }/* İşlem sonu */
 ?>
 
 <!-- partial -->
