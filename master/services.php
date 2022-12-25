@@ -25,15 +25,76 @@ if($_SERVER["REQUEST_METHOD"] == 'POST' && isset($_POST['service1_submit'])){
   $hizmet1_yazi4 = security("hizmet1_yazi4");
   $hizmet1_baslik5 = security("hizmet1_baslik5");
   $hizmet1_yazi5 = security("hizmet1_yazi5");
-  $update=$db1->Update('UPDATE tbl_services SET main_title=?, title_1=?, text_1=?, title_2=?, text_2=?, title_3=?, text_3=?,
+  $update1=$db1->Update('UPDATE tbl_services SET main_title=?, title_1=?, text_1=?, title_2=?, text_2=?, title_3=?, text_3=?,
   title_4=?, text_4=?, title_5=?, text_5=? WHERE id=1',array($hizmet1_anabaslik,$hizmet1_baslik1,$hizmet1_yazi1,$hizmet1_baslik2,
   $hizmet1_yazi2,$hizmet1_baslik3,$hizmet1_yazi3,$hizmet1_baslik4,$hizmet1_yazi4,$hizmet1_baslik5,$hizmet1_yazi5));
-  if($update){
+  if($update1){
     echo '<meta http-equiv="refresh" content="0;URL=http://localhost/hntr.tech/master/services.php">';
    }
   }/* İşlem sonu */
 
+/* İçerik-2 başlık ve yazı update işlemi */
+if($_SERVER["REQUEST_METHOD"] == 'POST' && isset($_POST['service2_submit'])){
+  $hizmet2_anabaslik = security("hizmet2_anabaslik");
+  $hizmet2_baslik1 = security("hizmet2_baslik1");
+  $hizmet2_yazi1 = security("hizmet2_yazi1");
+  $hizmet2_baslik2 = security("hizmet2_baslik2");
+  $hizmet2_yazi2 = security("hizmet2_yazi2");
+  $hizmet2_baslik3 = security("hizmet2_baslik3");
+  $hizmet2_yazi3 = security("hizmet2_yazi3");
+  $hizmet2_baslik4 = security("hizmet2_baslik4");
+  $hizmet2_yazi4 = security("hizmet2_yazi4");
+  $hizmet2_baslik5 = security("hizmet2_baslik5");
+  $hizmet2_yazi5 = security("hizmet2_yazi5");
+  $update2=$db2->Update('UPDATE tbl_services SET main_title=?, title_1=?, text_1=?, title_2=?, text_2=?, title_3=?, text_3=?,
+  title_4=?, text_4=?, title_5=?, text_5=? WHERE id=2',array($hizmet2_anabaslik,$hizmet2_baslik1,$hizmet2_yazi1,$hizmet2_baslik2,
+  $hizmet2_yazi2,$hizmet2_baslik3,$hizmet2_yazi3,$hizmet2_baslik4,$hizmet2_yazi4,$hizmet2_baslik5,$hizmet2_yazi5));
+  if($update2){
+    echo '<meta http-equiv="refresh" content="0;URL=http://localhost/hntr.tech/master/services.php">';
+   }
+  }/* İşlem sonu */
 
+  /* İçerik-3 başlık ve yazı update işlemi */
+if($_SERVER["REQUEST_METHOD"] == 'POST' && isset($_POST['service3_submit'])){
+  $hizmet3_anabaslik = security("hizmet3_anabaslik");
+  $hizmet3_baslik1 = security("hizmet3_baslik1");
+  $hizmet3_yazi1 = security("hizmet3_yazi1");
+  $hizmet3_baslik2 = security("hizmet3_baslik2");
+  $hizmet3_yazi2 = security("hizmet3_yazi2");
+  $hizmet3_baslik3 = security("hizmet3_baslik3");
+  $hizmet3_yazi3 = security("hizmet3_yazi3");
+  $hizmet3_baslik4 = security("hizmet3_baslik4");
+  $hizmet3_yazi4 = security("hizmet3_yazi4");
+  $hizmet3_baslik5 = security("hizmet3_baslik5");
+  $hizmet3_yazi5 = security("hizmet3_yazi5");
+  $update3=$db3->Update('UPDATE tbl_services SET main_title=?, title_1=?, text_1=?, title_2=?, text_2=?, title_3=?, text_3=?,
+  title_4=?, text_4=?, title_5=?, text_5=? WHERE id=3',array($hizmet3_anabaslik,$hizmet3_baslik1,$hizmet3_yazi1,$hizmet3_baslik2,
+  $hizmet3_yazi2,$hizmet3_baslik3,$hizmet3_yazi3,$hizmet3_baslik4,$hizmet3_yazi4,$hizmet3_baslik5,$hizmet3_yazi5));
+  if($update3){
+    echo '<meta http-equiv="refresh" content="0;URL=http://localhost/hntr.tech/master/services.php">';
+   }
+  }/* İşlem sonu */
+
+  /* İçerik-4 başlık ve yazı update işlemi */
+if($_SERVER["REQUEST_METHOD"] == 'POST' && isset($_POST['service4_submit'])){
+  $hizmet4_anabaslik = security("hizmet4_anabaslik");
+  $hizmet4_baslik1 = security("hizmet4_baslik1");
+  $hizmet4_yazi1 = security("hizmet4_yazi1");
+  $hizmet4_baslik2 = security("hizmet4_baslik2");
+  $hizmet4_yazi2 = security("hizmet4_yazi2");
+  $hizmet4_baslik3 = security("hizmet4_baslik3");
+  $hizmet4_yazi3 = security("hizmet4_yazi3");
+  $hizmet4_baslik4 = security("hizmet4_baslik4");
+  $hizmet4_yazi4 = security("hizmet4_yazi4");
+  $hizmet4_baslik5 = security("hizmet4_baslik5");
+  $hizmet4_yazi5 = security("hizmet4_yazi5");
+  $update4=$db4->Update('UPDATE tbl_services SET main_title=?, title_1=?, text_1=?, title_2=?, text_2=?, title_3=?, text_3=?,
+  title_4=?, text_4=?, title_5=?, text_5=? WHERE id=4',array($hizmet4_anabaslik,$hizmet4_baslik1,$hizmet4_yazi1,$hizmet4_baslik2,
+  $hizmet4_yazi2,$hizmet4_baslik3,$hizmet4_yazi3,$hizmet4_baslik4,$hizmet4_yazi4,$hizmet4_baslik5,$hizmet4_yazi5));
+  if($update4){
+    echo '<meta http-equiv="refresh" content="0;URL=http://localhost/hntr.tech/master/services.php">';
+   }
+  }/* İşlem sonu */
 
 ?>
 
