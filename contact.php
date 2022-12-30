@@ -1,8 +1,34 @@
 
 <?php
 require 'header.php';
+
+/* Veritabanı tablo çağırma işlemi */
 $db=new Database();
 $myQuery=$db->getRow(" Call sp_Contact()");	
+/* İşlem sonu */
+
+/* Mesaj gönderme işlemi */
+if($_SERVER["REQUEST_METHOD"] == 'POST' && isset($_POST['message_submit'])){
+	
+	$isim = security("isim");
+  
+	$mail = security("mail");
+  
+	$baslik = security("baslik");
+  
+	$yazi = security("yazi");
+  
+	$insert=$db->Insert('INSERT INTO `tbl_messages` SET name=?, mail=?, title=?, text=?',array($isim,$mail,$baslik,$yazi));
+  
+	if($insert){
+	
+	  $mesajBasarili="Mesajınız başarılı şekilde gönderilmiştir. Birazdan sayfa otomatik olarak yenilenecektir.";
+	  echo '<meta http-equiv="refresh" content="3;URL=https://hntr.tech/contact.php">';
+  
+	 }
+	
+	}/* İşlem sonu */
+
 ?>
 			<div id="colorlib-main">
 				<section class="ftco-section ftco-no-pt ftco-no-pb">
@@ -12,36 +38,38 @@ $myQuery=$db->getRow(" Call sp_Contact()");
 								<div class="contact-wrap w-100 p-md-5 p-4">
 									<h3 class="mb-4 heading">MESAJ GÖNDERİN</h3>
 									<br><br>
-									<form method="POST" id="contactForm" name="contactForm" class="contactForm">
+									
+									<form method="POST" id="contactForm" class="contactForm">
 										<div class="row">
 											<div class="col-md-6">
 												<div class="form-group">
 													<label class="label" for="name">İSİM SOYİSİM</label>
-													<input type="text" class="form-control" name="name" id="name" placeholder="İsim Soyisim">
+													<input type="text" class="form-control" name="isim" placeholder="İsim Soyisim">
 												</div>
 											</div>
 											<div class="col-md-6"> 
 												<div class="form-group">
 													<label class="label" for="email">EMAİL ADRESİ</label>
-													<input type="email" class="form-control" name="email" id="email" placeholder="Email Adresi">
+													<input type="email" class="form-control" name="mail" placeholder="Email Adresi">
 												</div>
 											</div>
 											<div class="col-md-12">
 												<div class="form-group">
 													<label class="label" for="subject">KONU</label>
-													<input type="text" class="form-control" name="subject" id="subject" placeholder="Konu">
+													<input type="text" class="form-control" name="baslik" placeholder="Konu">
 												</div>
 											</div>
 											<div class="col-md-12">
 												<div class="form-group">
 													<label class="label" for="#">Mesaj</label>
-													<textarea name="message" class="form-control" id="message" cols="30" rows="4" placeholder="Mesaj"></textarea>
+													<textarea name="yazi" class="form-control" cols="30" rows="4" placeholder="Mesaj"></textarea>
 												</div>
 											</div>
+											<div class="submitting" style="color: #FFF;"><?=$mesajBasarili ?></div>
 											<div class="col-md-12">
 												<div class="form-group">
-													<br><input type="submit" value="Gönder" class="btn btn-primary">
-													<div class="submitting"></div>
+													<br><input type="submit" name="message_submit" value="Gönder" class="btn btn-primary">
+													
 												</div>
 											</div>
 										</div>
