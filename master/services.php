@@ -204,13 +204,13 @@ if($_SERVER["REQUEST_METHOD"] == 'POST' && isset($_POST['service4_submit'])){
 
           <div class="content-wrapper">
 
-        
+          <div class="row">
 
               <!--about image -->
 
              
 
-             <div class="col-12 grid-margin stretch-card">
+             <div class="col-md-6 grid-margin stretch-card">
 
                 <div class="card">
 
@@ -374,7 +374,7 @@ if($_SERVER["REQUEST_METHOD"] == 'POST' && isset($_POST['service4_submit'])){
 
              
 
-             <div class="col-12 grid-margin stretch-card">
+             <div class="col-md-6 grid-margin stretch-card">
 
                 <div class="card">
 
@@ -540,7 +540,7 @@ if($_SERVER["REQUEST_METHOD"] == 'POST' && isset($_POST['service4_submit'])){
 
              
 
-             <div class="col-12 grid-margin stretch-card">
+             <div class="col-md-6 grid-margin stretch-card">
 
                 <div class="card">
 
@@ -706,7 +706,7 @@ if($_SERVER["REQUEST_METHOD"] == 'POST' && isset($_POST['service4_submit'])){
 
              
 
-             <div class="col-12 grid-margin stretch-card">
+             <div class="col-md-6 grid-margin stretch-card">
 
                 <div class="card">
 

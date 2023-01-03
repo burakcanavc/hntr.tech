@@ -4,6 +4,17 @@
     if(!(isset($_SESSION["id"]))){
     
     }
+
+    /* Veritabanı tablo çağırma işlemi */
+
+$db=new Database();
+
+$blogSayisi=$db->getColumn("SELECT COUNT(*) FROM tbl_blog");
+$mesajSayisi=$db->getColumn("SELECT COUNT(*) FROM tbl_messages");
+$yorumSayisi=$db->getColumn("SELECT COUNT(*) FROM tbl_comments");
+
+/* İşlem sonu */
+
       ?>
         <div class="main-panel">
           <div class="content-wrapper">
@@ -35,7 +46,7 @@
                     <div class="row">
                       <div class="col-9">
                         <div class="d-flex align-items-center align-self-start">
-                          <h3 class="mb-0">1</h3>
+                          <h3 class="mb-0"><?=$blogSayisi; ?></h3>
                           
                         </div>
                       </div>
@@ -55,7 +66,7 @@
                     <div class="row">
                       <div class="col-9">
                         <div class="d-flex align-items-center align-self-start">
-                          <h3 class="mb-0">4</h3>
+                          <h3 class="mb-0"><?=$yorumSayisi; ?></h3>
                           
                         </div>
                       </div>
@@ -75,7 +86,7 @@
                     <div class="row">
                       <div class="col-9">
                         <div class="d-flex align-items-center align-self-start">
-                          <h3 class="mb-0">0</h3>
+                          <h3 class="mb-0"><?=$mesajSayisi; ?></h3>
                          
                         </div>
                       </div>

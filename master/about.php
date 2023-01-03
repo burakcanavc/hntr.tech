@@ -81,10 +81,12 @@ if(move_uploaded_file($fileTempName, $myPath)){
 <div class="main-panel">
 
           <div class="content-wrapper">
+          <div class="row">
+         
 
-          <!--about image -->
+           <!--about text -->
 
-             <div class="col-12 grid-margin stretch-card">
+           <div class="col-md-6 grid-margin stretch-card">
 
                 <div class="card">
 
@@ -139,24 +141,11 @@ if(move_uploaded_file($fileTempName, $myPath)){
                       </div>
 
                     </div>
+                    <br>
 
-                  
+                          <hr size="10" color="#fff">
 
-                 </div>
-
-                </div>
-
-              </div>
-
-              <!-- end about image -->
-
-           <!--about text -->
-
-           <div class="col-12 grid-margin stretch-card">
-
-                <div class="card">
-
-                  <div class="card-body">
+                          <br>
 
                     <h3  style="text-align:center;" class="card-title">Hakkımızda Yazısı</h3>
 
@@ -208,7 +197,7 @@ if(move_uploaded_file($fileTempName, $myPath)){
 
              
 
-             <div class="col-12 grid-margin stretch-card">
+             <div class="col-md-6 grid-margin stretch-card">
 
                 <div class="card">
 

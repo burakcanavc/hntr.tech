@@ -60,10 +60,10 @@ if($_SERVER["REQUEST_METHOD"] == 'POST' && isset($_POST['content4_submit'])){
 <!-- partial -->
 <div class="main-panel">
           <div class="content-wrapper">
-           
+          <div class="row">
              <!--main content -->
              
-             <div class="col-12 grid-margin stretch-card">
+             <div class="col-md-6 grid-margin stretch-card">
                 <div class="card">
                   <div class="card-body">
                   <div class="form-group">
@@ -106,7 +106,7 @@ if($_SERVER["REQUEST_METHOD"] == 'POST' && isset($_POST['content4_submit'])){
               <!-- end main content -->
               <!--about image -->
              
-             <div class="col-12 grid-margin stretch-card">
+             <div class="col-md-6 grid-margin stretch-card">
                 <div class="card">
                   <div class="card-body">
                   <div class="form-group">
@@ -153,7 +153,7 @@ if($_SERVER["REQUEST_METHOD"] == 'POST' && isset($_POST['content4_submit'])){
               <!-- end about image -->
               <!--about image -->
              
-             <div class="col-12 grid-margin stretch-card">
+             <div class="col-md-6 grid-margin stretch-card">
                 <div class="card">
                   <div class="card-body">
                   <div class="form-group">
@@ -200,7 +200,7 @@ if($_SERVER["REQUEST_METHOD"] == 'POST' && isset($_POST['content4_submit'])){
               <!-- end about image -->
               <!--about image -->
              
-             <div class="col-12 grid-margin stretch-card">
+             <div class="col-md-6 grid-margin stretch-card">
                 <div class="card">
                   <div class="card-body">
                   <div class="form-group">
@@ -247,7 +247,7 @@ if($_SERVER["REQUEST_METHOD"] == 'POST' && isset($_POST['content4_submit'])){
               <!-- end about image -->
               <!--about image -->
              
-             <div class="col-12 grid-margin stretch-card">
+             <div class="col-md-6 grid-margin stretch-card">
                 <div class="card">
                   <div class="card-body">
                   <div class="form-group">

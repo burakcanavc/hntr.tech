@@ -128,7 +128,7 @@ if(move_uploaded_file($fileTempName, $myPath)){
 
                       <h4 for="exampleTextarea1">Yazı</h4>
 
-                        <textarea id="editor" name="yazi" class="form-control" rows="7"></textarea>
+                        <textarea id="yazi" name="yazi" class="form-control" rows="7"></textarea>
 
                       </div>
                       <br>
@@ -177,6 +177,6 @@ if(move_uploaded_file($fileTempName, $myPath)){
 
           <!-- content-wrapper ends -->
 
-
+<script> CKEDITOR.replace('yazi');</script>
 
 <?php include 'footer.php'; ?>

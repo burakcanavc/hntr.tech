@@ -9,7 +9,7 @@ require '../classes/safe.php';
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <title>hntr.tech Master</title>
-    <script src="https://cdn.ckeditor.com/4.13.0/standard/ckeditor.js"></script>
+    <script src="../ckeditor/ckeditor.js"></script>
     <!-- plugins:css -->
     <link rel="stylesheet" href="assets/vendors/mdi/css/materialdesignicons.min.css">
     <link rel="stylesheet" href="assets/vendors/css/vendor.bundle.base.css">

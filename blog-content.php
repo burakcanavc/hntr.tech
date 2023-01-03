@@ -4,7 +4,7 @@ require 'header.php';
 
 /* Veritabanı tablo çağırma işlemi */
 $db=new Database();
-$myQuery=$db->getRow("SELECT * FROM tbl_blog WHERE id=58");
+$myQuery=$db->getRow("SELECT * FROM tbl_blog WHERE id=62");
 $myQuery1=$db->getRow("Call sp_About()");
 /* İşlem sonu */
 
