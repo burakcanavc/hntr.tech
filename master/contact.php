@@ -36,7 +36,7 @@ if($_SERVER["REQUEST_METHOD"] == 'POST' && isset($_POST['contact_submit'])){
 
   if($update){
 
-   echo '<meta http-equiv="refresh" content="0;URL=http://localhost/hntr.tech/master/contact.php">';
+   echo '<meta http-equiv="refresh" content="0;URL=https://hntr.tech/master/contact.php">';
 
   }
 

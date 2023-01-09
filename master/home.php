@@ -11,7 +11,7 @@ if($_SERVER["REQUEST_METHOD"] == 'POST' && isset($_POST['main_submit'])){
   $ana_baslik = security("ana_baslik");
   $update=$db->Update('UPDATE tbl_home SET main_title=?',array($ana_baslik));
   if($update){
-    echo '<meta http-equiv="refresh" content="0;URL=http://localhost/hntr.tech/master/home.php">';
+    echo '<meta http-equiv="refresh" content="0;URL=https://hntr.tech/master/home.php">';
    }
   }/* İşlem sonu */
 
@@ -21,7 +21,7 @@ if($_SERVER["REQUEST_METHOD"] == 'POST' && isset($_POST['content1_submit'])){
   $icerik1_yazi = security("icerik1_yazi");
   $update=$db->Update('UPDATE tbl_home SET title_content1=?, text_content1=?',array($icerik1_baslik,$icerik1_yazi));
   if($update){
-    echo '<meta http-equiv="refresh" content="0;URL=http://localhost/hntr.tech/master/home.php">';
+    echo '<meta http-equiv="refresh" content="0;URL=https://hntr.tech/master/home.php">';
    }
   }/* İşlem sonu */
   
@@ -31,7 +31,7 @@ if($_SERVER["REQUEST_METHOD"] == 'POST' && isset($_POST['content2_submit'])){
   $icerik2_yazi = security("icerik2_yazi");
   $update=$db->Update('UPDATE tbl_home SET title_content2=?, text_content2=?',array($icerik2_baslik,$icerik2_yazi));
   if($update){
-    echo '<meta http-equiv="refresh" content="0;URL=http://localhost/hntr.tech/master/home.php">';
+    echo '<meta http-equiv="refresh" content="0;URL=https://hntr.tech/master/home.php">';
    }
   }/* İşlem sonu */
 
@@ -41,7 +41,7 @@ if($_SERVER["REQUEST_METHOD"] == 'POST' && isset($_POST['content3_submit'])){
   $icerik3_yazi = security("icerik3_yazi");
   $update=$db->Update('UPDATE tbl_home SET title_content3=?, text_content3=?',array($icerik3_baslik,$icerik3_yazi));
   if($update){
-    echo '<meta http-equiv="refresh" content="0;URL=http://localhost/hntr.tech/master/home.php">';
+    echo '<meta http-equiv="refresh" content="0;URL=https://hntr.tech/master/home.php">';
    }
   }/* İşlem sonu */
 
@@ -51,9 +51,109 @@ if($_SERVER["REQUEST_METHOD"] == 'POST' && isset($_POST['content4_submit'])){
   $icerik4_yazi = security("icerik4_yazi");
   $update=$db->Update('UPDATE tbl_home SET title_content4=?, text_content4=?',array($icerik4_baslik,$icerik4_yazi));
   if($update){
-    echo '<meta http-equiv="refresh" content="0;URL=http://localhost/hntr.tech/master/home.php">';
+    echo '<meta http-equiv="refresh" content="0;URL=https://hntr.tech/master/home.php">';
    }
   }/* İşlem sonu */
+
+  /* Anasayfa ana fotoğrafı sunucuya yükleme ve fotoğraf ismini veritabanına update işlemi */
+
+$takeFile=$_FILES["mainImgFile"];
+$fileName=$takeFile["name"];
+$fileTempName=$takeFile["tmp_name"];
+$myPath="../images/".$fileName;
+
+if(move_uploaded_file($fileTempName, $myPath)){
+if($_SERVER["REQUEST_METHOD"] == 'POST' && isset($_POST['main_img_submit'])){
+
+  $update=$db->Update('UPDATE tbl_home SET img_main=?',array($fileName));
+
+  if($update){
+
+    echo '<meta http-equiv="refresh" content="0;URL=https://hntr.tech/master/home.php">';
+
+   }
+  }
+}/* İşlem sonu */
+
+/* İçerik-1 fotoğrafını sunucuya yükleme ve fotoğraf ismini veritabanına update işlemi */
+
+$takeFile=$_FILES["content1File"];
+$fileName=$takeFile["name"];
+$fileTempName=$takeFile["tmp_name"];
+$myPath="../images/".$fileName;
+
+if(move_uploaded_file($fileTempName, $myPath)){
+if($_SERVER["REQUEST_METHOD"] == 'POST' && isset($_POST['img_content1_submit'])){
+
+  $update=$db->Update('UPDATE tbl_home SET img_content1=?',array($fileName));
+
+  if($update){
+
+    echo '<meta http-equiv="refresh" content="0;URL=https://hntr.tech/master/home.php">';
+
+   }
+  }
+}/* İşlem sonu */
+
+/* İçerik-2 fotoğrafını sunucuya yükleme ve fotoğraf ismini veritabanına update işlemi */
+
+$takeFile=$_FILES["content2File"];
+$fileName=$takeFile["name"];
+$fileTempName=$takeFile["tmp_name"];
+$myPath="../images/".$fileName;
+
+if(move_uploaded_file($fileTempName, $myPath)){
+if($_SERVER["REQUEST_METHOD"] == 'POST' && isset($_POST['img_content2_submit'])){
+
+  $update=$db->Update('UPDATE tbl_home SET img_content2=?',array($fileName));
+
+  if($update){
+
+    echo '<meta http-equiv="refresh" content="0;URL=https://hntr.tech/master/home.php">';
+
+   }
+  }
+}/* İşlem sonu */
+
+/* İçerik-3 fotoğrafını sunucuya yükleme ve fotoğraf ismini veritabanına update işlemi */
+
+$takeFile=$_FILES["content3File"];
+$fileName=$takeFile["name"];
+$fileTempName=$takeFile["tmp_name"];
+$myPath="../images/".$fileName;
+
+if(move_uploaded_file($fileTempName, $myPath)){
+if($_SERVER["REQUEST_METHOD"] == 'POST' && isset($_POST['img_content3_submit'])){
+
+  $update=$db->Update('UPDATE tbl_home SET img_content3=?',array($fileName));
+
+  if($update){
+
+    echo '<meta http-equiv="refresh" content="0;URL=https://hntr.tech/master/home.php">';
+
+   }
+  }
+}/* İşlem sonu */
+
+/* İçerik-4 fotoğrafını sunucuya yükleme ve fotoğraf ismini veritabanına update işlemi */
+
+$takeFile=$_FILES["content4File"];
+$fileName=$takeFile["name"];
+$fileTempName=$takeFile["tmp_name"];
+$myPath="../images/".$fileName;
+
+if(move_uploaded_file($fileTempName, $myPath)){
+if($_SERVER["REQUEST_METHOD"] == 'POST' && isset($_POST['img_content4_submit'])){
+
+  $update=$db->Update('UPDATE tbl_home SET img_content4=?',array($fileName));
+
+  if($update){
+
+    echo '<meta http-equiv="refresh" content="0;URL=https://hntr.tech/master/home.php">';
+
+   }
+  }
+}/* İşlem sonu */
 
 ?>
 
@@ -78,12 +178,15 @@ if($_SERVER["REQUEST_METHOD"] == 'POST' && isset($_POST['content4_submit'])){
                   <h4>Fotoğraf Yükle</h4>
                   </div>
                   <div style="text-align: center">
-                
+                  <form class="forms-sample" method="POST" enctype="multipart/form-data">
+                  <br>
+                  <input type="file" name="mainImgFile">
                           <span>
-                            <button class="btn btn-primary btn-icon-text" type="button"><i class="mdi mdi-upload btn-icon-prepend"></i>Yükle</button>
+                            <button name="main_img_submit" class="btn btn-primary btn-icon-text" type="submit"><i class="mdi mdi-upload btn-icon-prepend"></i>Yükle</button>
                           </span>
+                          </form>
                           </div>
-                          <br><br>
+                          <br>
                           <hr size="10" color="#fff">
                           <br>
                           <h3  style="text-align:center;" class="card-title">Ana Yazı</h3>
@@ -121,12 +224,15 @@ if($_SERVER["REQUEST_METHOD"] == 'POST' && isset($_POST['content4_submit'])){
                   <h4>Fotoğraf Yükle</h4>
                   </div>
                   <div style="text-align: center">
-                
+                  <form class="forms-sample" method="POST" enctype="multipart/form-data">
+                  <br>
+                  <input type="file" name="content1File">
                           <span>
-                            <button class="btn btn-primary btn-icon-text" type="button"><i class="mdi mdi-upload btn-icon-prepend"></i>Yükle</button>
+                            <button name="img_content1_submit" class="btn btn-primary btn-icon-text" type="submit"><i class="mdi mdi-upload btn-icon-prepend"></i>Yükle</button>
                           </span>
+                          </form>
                           </div>
-                          <br><br>
+                          <br>
                           <hr size="10" color="#fff">
                           <br>
                           <h3  style="text-align:center;" class="card-title">İçerik-1 Yazı</h3>
@@ -168,12 +274,15 @@ if($_SERVER["REQUEST_METHOD"] == 'POST' && isset($_POST['content4_submit'])){
                   <h4>Fotoğraf Yükle</h4>
                   </div>
                   <div style="text-align: center">
-                
+                  <form class="forms-sample" method="POST" enctype="multipart/form-data">
+                  <br>
+                  <input type="file" name="content2File">
                           <span>
-                            <button class="btn btn-primary btn-icon-text" type="button"><i class="mdi mdi-upload btn-icon-prepend"></i>Yükle</button>
+                            <button name="img_content2_submit" class="btn btn-primary btn-icon-text" type="submit"><i class="mdi mdi-upload btn-icon-prepend"></i>Yükle</button>
                           </span>
+                          </form>
                           </div>
-                          <br><br>
+                          <br>
                           <hr size="10" color="#fff">
                           <br>
                           <h3  style="text-align:center;" class="card-title">İçerik-2 Yazı</h3>
@@ -215,12 +324,15 @@ if($_SERVER["REQUEST_METHOD"] == 'POST' && isset($_POST['content4_submit'])){
                   <h4>Fotoğraf Yükle</h4>
                   </div>
                   <div style="text-align: center">
-                
+                  <form class="forms-sample" method="POST" enctype="multipart/form-data">
+                  <br>
+                  <input type="file" name="content3File">
                           <span>
-                            <button class="btn btn-primary btn-icon-text" type="button"><i class="mdi mdi-upload btn-icon-prepend"></i>Yükle</button>
+                            <button name="img_content3_submit" class="btn btn-primary btn-icon-text" type="submit"><i class="mdi mdi-upload btn-icon-prepend"></i>Yükle</button>
                           </span>
+                          </form>
                           </div>
-                          <br><br>
+                          <br>
                           <hr size="10" color="#fff">
                           <br>
                           <h3  style="text-align:center;" class="card-title">İçerik-3 Yazı</h3>
@@ -262,12 +374,15 @@ if($_SERVER["REQUEST_METHOD"] == 'POST' && isset($_POST['content4_submit'])){
                   <h4>Fotoğraf Yükle</h4>
                   </div>
                   <div style="text-align: center">
-                
+                  <form class="forms-sample" method="POST" enctype="multipart/form-data">
+                  <br>
+                  <input type="file" name="content4File">
                           <span>
-                            <button class="btn btn-primary btn-icon-text" type="button"><i class="mdi mdi-upload btn-icon-prepend"></i>Yükle</button>
+                            <button name="img_content4_submit" class="btn btn-primary btn-icon-text" type="submit   "><i class="mdi mdi-upload btn-icon-prepend"></i>Yükle</button>
                           </span>
+                          </form>
                           </div>
-                          <br><br>
+                          <br>
                           <hr size="10" color="#fff">
                           <br>
                           <h3  style="text-align:center;" class="card-title">İçerik-4 Yazı</h3>

@@ -5,12 +5,11 @@ require 'header.php';
 
 $db=new Database();
 
-$myQuery=$db->TableOperations("SELECT * FROM tbl_messages",PDO::FETCH_ASSOC);
+$blogYazisi=$db->TableOperations("SELECT * FROM tbl_blog",PDO::FETCH_ASSOC);
 
 /* İşlem sonu */
 
 ?>
-<script src="https://code.jquery.com/jquery-3.5.0.js"></script>
 <!-- partial -->
 <div class="main-panel">
           <div class="content-wrapper">
@@ -19,38 +18,36 @@ $myQuery=$db->TableOperations("SELECT * FROM tbl_messages",PDO::FETCH_ASSOC);
               <div class="col-lg-12 grid-margin stretch-card">
                 <div class="card">
                   <div class="card-body">
-                  <h3  style="text-align:center;" class="card-title">Mesajlar</h3>
+                  <h3  style="text-align:center;" class="card-title">Blog Yazıları</h3>
                   
                   <hr size="10" color="#fff">
                   
                     <div class="table-responsive">
-                    <button id="show" style="float: right;" type="button" class="btn btn-primary btn-fw"><a>Mesajları Görüntüle/Kapat</a></button>
-                      <table class="table">
+                    <table class="table">
                         <thead>
                           <tr>
-                            <th>İsim</th>
-                            <th>Email</th>
+                            <th>Başlık</th>
+                            <th>Etiketler</th>
                             <th>Tarih</th>
-                            <th>Konu</th> 
-                            <th>Mesaj</th>
+                            <th>Görüntüle/Düzenle</th>
                             <th>Kaldır</th>
                           </tr>
                         </thead>
                         <tbody>
                         <?php 
-                        foreach($myQuery as $items){
+                        foreach($blogYazisi as $items){
                         ?>
                         <tr>
-                            <td><?=$items["name"]; ?></td>
-                            <td><?=$items["mail"]; ?></td>
-                            <td><?=$items["time"]; ?></td>
                             <td><?=$items["title"]; ?></td>
-                            <td><p style="display: none"><?=$items["text"];?></p></td>
-                            <td><div class="dropdown">
+                            <td><?=$items["tag1"]; ?> - <?=$items["tag2"]; ?> - <?=$items["tag3"]; ?></td>
+                            <td><?=$items["date"]; ?></td>
+                            <td><a href="blog-edit.php?id=<?=$items["id"]; ?>"><button type="button" class="btn btn-primary btn-fw">Görüntüle/Düzenle</button></a>
+                          </td>
+                      <td><div class="dropdown">
                         <button class="btn btn-danger dropdown-toggle" type="button" id="dropdownMenuButton4" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Kaldır</button>
                         <div class="dropdown-menu" aria-labelledby="dropdownMenuButton4">
                         <h6 class="dropdown-header">Emin misiniz?</h6>
-                        <a href="message-delete.php?id=<?=$items["id"]; ?>" class="dropdown-item"><button type="button" class="btn btn-danger btn-fw">Evet</button></a>
+                        <a href="blog-delete.php?id=<?=$items["id"]; ?>" class="dropdown-item"><button type="button" class="btn btn-danger btn-fw">Evet</button></a>
                           <div class="dropdown-divider"></div>
                           <a class="dropdown-item"><button type="button" class="btn btn-warning btn-fw">Hayır</button></a>
                         </div>
@@ -58,11 +55,7 @@ $myQuery=$db->TableOperations("SELECT * FROM tbl_messages",PDO::FETCH_ASSOC);
                           </tr>
                           
                           <?php } ?>
-                        <script>
-                        $( "#show" ).click(function() {
-                        $( "p" ).toggle();
-                        });
-                        </script>
+                        
                         </tbody>
                       </table>
                     </div>

@@ -72,6 +72,26 @@ if(move_uploaded_file($fileTempName, $myPath)){
     }
 }/* İşlem sonu */
 
+/* Ekip fotoğrafını sunucuya yükleme ve fotoğraf ismini veritabanına update işlemi */
+
+$takeFile=$_FILES["myTeamFile"];
+$fileName=$takeFile["name"];
+$fileTempName=$takeFile["tmp_name"];
+$myPath="../images/".$fileName;
+
+if(move_uploaded_file($fileTempName, $myPath)){
+if($_SERVER["REQUEST_METHOD"] == 'POST' && isset($_POST['team_img_submit'])){
+
+  $update=$db->Update('UPDATE tbl_about SET team_img=?',array($fileName));
+
+  if($update){
+
+    echo '<meta http-equiv="refresh" content="0;URL=https://hntr.tech/master/about.php">';
+
+   }
+  }
+}/* İşlem sonu */
+
 ?>
 
 
@@ -110,43 +130,21 @@ if(move_uploaded_file($fileTempName, $myPath)){
 
                   <div style="text-align: center">
 
-                  Fotoğraf Yükle
-
+                  <h4>Fotoğraf Yükle</h4>
                   </div>
-                              <br>
                   <div style="text-align: center">
-
-              
-                          <form class="forms-sample" method="POST" enctype="multipart/form-data">
-
-                      <div class="form-group">
-                      
-                    <input type="file" name="myFile">
-
-                      </div>
-                    <br>
-                      <div style="text-align:center;">
-
-                      <button class="btn btn-primary btn-icon-text" name="img_submit" type="submit"><i class="mdi mdi-upload btn-icon-prepend"></i>Yükle</button>
-
-                      </div>
-
-                    </form>
-                            
-
-                          
-
-                    
-
-                      </div>
-
-                    </div>
-                    <br>
-
-                          <hr size="10" color="#fff">
-
+                  <form class="forms-sample" method="POST" enctype="multipart/form-data">
+                  <br>
+                  <input type="file" name="myFile">
+                          <span>
+                            <button name="img_submit" class="btn btn-primary btn-icon-text" type="submit"><i class="mdi mdi-upload btn-icon-prepend"></i>Yükle</button>
+                          </span>
+                          </form>
+                          </div>
                           <br>
-
+                          <hr size="10" color="#fff">
+                          <br>
+                          </div>
                     <h3  style="text-align:center;" class="card-title">Hakkımızda Yazısı</h3>
 
                     
@@ -213,7 +211,7 @@ if(move_uploaded_file($fileTempName, $myPath)){
 
                   <div style="text-align: center">
 
-                  <img style="max-width:40%; height: auto;" src="../images/<?php echo $myQuery->team_img; ?>" alt="about">
+                  <img style="max-width:50%; height: auto;" src="../images/<?php echo $myQuery->team_img; ?>" alt="about">
 
                   </div>
 
@@ -222,26 +220,20 @@ if(move_uploaded_file($fileTempName, $myPath)){
                   <div style="text-align: center">
 
                   <h4>Fotoğraf Yükle</h4>
-
                   </div>
-
                   <div style="text-align: center">
-
-                
-
+                  <form class="forms-sample" method="POST" enctype="multipart/form-data">
+                  <br>
+                  <input type="file" name="myTeamFile">
                           <span>
-
-                            <button class="btn btn-primary btn-icon-text" type="button"><i class="mdi mdi-upload btn-icon-prepend"></i>Yükle</button>
-
+                            <button name="team_img_submit" class="btn btn-primary btn-icon-text" type="submit"><i class="mdi mdi-upload btn-icon-prepend"></i>Yükle</button>
                           </span>
-
+                          </form>
                           </div>
-
-                          <br><br>
-
-                          <hr size="10" color="#fff">
-
                           <br>
+                          <hr size="10" color="#fff">
+                          <br>
+                          </div>
 
                           <h3  style="text-align:center;" class="card-title">Ekip-1 Yazı</h3>
 

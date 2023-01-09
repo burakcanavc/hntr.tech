@@ -2,7 +2,7 @@
 <footer class="footer">
 <div class="row mt-5">
                 <div class="col-12 mt-xl-2">
-                  <p class="text-white font-weight-medium text-center">Copyright &copy; 2022 &nbsp;<a href="https://hntr.tech" style="color:#fff;">hntr.tech</a>&nbsp; Tüm Hakları Saklıdır. </p>
+                  <p class="text-white font-weight-medium text-center">Copyright &copy; <script>document.write(new Date().getFullYear());</script> &nbsp;<a href="https://hntr.tech" style="color:#fff;">hntr.tech</a>&nbsp; Tüm Hakları Saklıdır. </p>
                   
                 </div>
           </footer>

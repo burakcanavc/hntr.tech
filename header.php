@@ -62,21 +62,21 @@ $myQuery1=$db1->getRow(" Call sp_About()");
 
 
 
-		<h1 id="colorlib-logo" class="mb-4 mb-md-5"><a href="index.php" style="background-image: url(images/bg_2.jpg);"><?php echo $myQuery1->site_name; ?></a></h1>
+		<h1 id="colorlib-logo" class="mb-4 mb-md-5"><a href="/" style="background-image: url(images/bg_2.jpg);"><?php echo $myQuery1->site_name; ?></a></h1>
 
 		<nav id="colorlib-main-menu" role="navigation">
 
 			<ul>
 
-				<li class="colorlib-active"><a href="index.php">ANASAYFA</a></li>
+				<li class="colorlib-active"><a href="/">ANASAYFA</a></li>
 
-				<li><a href="about.php">HAKKIMIZDA</a></li>
+				<li><a href="hakkimizda">HAKKIMIZDA</a></li>
 
-				<li><a href="services.php">HİZMETLERİMİZ</a></li>
+				<li><a href="hizmetlerimiz">HİZMETLERİMİZ</a></li>
 
-				<li><a href="contact.php">İLETİŞİM</a></li>
+				<li><a href="iletisim">İLETİŞİM</a></li>
 
-				<li><a href="blog.php">BLOG</a></li>
+				<li><a href="blog">BLOG</a></li>
 
 			</ul>
 

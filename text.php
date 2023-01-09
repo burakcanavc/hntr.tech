@@ -1,14 +1,16 @@
 
 <?php
 require 'header.php';
-
+$yazi_id= $_GET['id'];
 /* Veritabanı tablo çağırma işlemi */
 $db=new Database();
-$myQuery=$db->getRow("SELECT * FROM tbl_blog WHERE id=62");
+$myQuery=$db->getRow('SELECT * FROM tbl_blog WHERE id=?',array($yazi_id));
+$blogDate="$myQuery->date";
 $myQuery1=$db->getRow("Call sp_About()");
+$blogYorum=$db->TableOperations('SELECT * FROM tbl_comments WHERE text_title="'.$myQuery->title.'"',PDO::FETCH_ASSOC);
 /* İşlem sonu */
 
-/* Mesaj gönderme işlemi */
+/* Yorum gönderme işlemi */
 if($_SERVER["REQUEST_METHOD"] == 'POST' && isset($_POST['comment_submit'])){
 	
 	$isim = security("isim");
@@ -16,13 +18,14 @@ if($_SERVER["REQUEST_METHOD"] == 'POST' && isset($_POST['comment_submit'])){
 	$mail = security("mail");
   
 	$yazi = security("yazi");
+
+    $blogYaziBaslik = security("yaziBaslik");
   
-	$insert=$db->Insert('INSERT INTO `tbl_comments` SET name=?, mail=?, text=?',array($isim,$mail,$yazi));
+	$insert=$db->Insert('INSERT INTO `tbl_comments` SET name=?, mail=?, text=?, text_title=?',array($isim,$mail,$yazi,$blogYaziBaslik));
   
 	if($insert){
-	
-	  $mesajBasarili="Mesajınız başarılı şekilde gönderilmiştir. Birazdan sayfa otomatik olarak yenilenecektir.";
-	  echo '<meta http-equiv="refresh" content="0;URL=https://hntr.tech/blog-content.php">';
+
+	  echo '<meta http-equiv="refresh" content="0;URL=https://hntr.tech/yazi-'.$yazi_id.'">';
   
 	 }
 	
@@ -37,47 +40,35 @@ if($_SERVER["REQUEST_METHOD"] == 'POST' && isset($_POST['comment_submit'])){
 								<div class="row">
                                   <div class="img img-blog w-100" style="background-image: url(images/<?php echo $myQuery->img; ?>);"></div>
 									<div class="px-5 mt-4">
-										<h1 class="mb-3"><?php echo $myQuery->title; ?></h1>
+										<h3 class="mb-3 font-weight-bold"><?php echo $myQuery->title; ?></h3>
 										<div style="color:#FFF;"><?php echo $myQuery->text; ?></div>
-										<div class="tag-widget post-tag-container mb-5 mt-5">
+										<div class="tag-widget post-tag-container mb-3 mt-3">
 											<div class="tagcloud">
-												<a href="blog-content.php" class="tag-cloud-link"><?= $myQuery->tag1; ?></a>
-												<a href="blog-content.php" class="tag-cloud-link"><?= $myQuery->tag2; ?></a>
-												<a href="blog-content.php" class="tag-cloud-link"><?= $myQuery->tag3; ?></a>
+												<a href="" class="tag-cloud-link"><?= $myQuery->tag1; ?></a>
+												<a href="" class="tag-cloud-link"><?= $myQuery->tag2; ?></a>
+												<a href="" class="tag-cloud-link"><?= $myQuery->tag3; ?></a>
 											</div>
+                                            <div class="mb-2 mt-2 font-weight-bold  " style="font-size:20px;color:#fff;"><?= $myQuery1->team_name; ?> • <?=date("d-m-Y", strtotime($blogDate)); ?></div>
 										</div>
-										
-										<div class="about-author d-flex p-4">
-											<div class="bio mr-5">
-												<img src="images/<?php echo $myQuery1->team_img; ?>" alt="Image placeholder" class="img-fluid mb-4">
-											</div>
-											<div class="desc">
-												<h3><?php echo $myQuery1->team_name; ?></h3>
-												<p><?php echo $myQuery1->team_dpt; ?></p>
-											</div>
-										</div>
-
-
-										<div class="pt-5 mt-5">
-											<h3 class="mb-5 font-weight-bold">Yorumlar</h3>
+										<div class="pt-0 mt-3">
+											<h3 style="color:#f3c623;" class="mb-5 font-weight-bold">Yorumlar</h3>
 											<ul class="comment-list">
-
+											<?php foreach($blogYorum as $items){ ?>
 												<li class="comment">
 													
 													<div class="comment-body">
-														<h3>Burakcan Avcı (Klon olan)</h3>
-														<div class="meta">29 Aralık 2022 20:35</div>
-														<p>Html'i öğrenmek kolaydır. Website yapmak isteyen herkesin bilmesi gereklidir.</p>
-														
+														<h3><?=$items["name"]; ?></h3>
+														<p><?=$items["text"]; ?></p>
+														<div style="float:right;" class="meta"><?=date("d-m-Y", strtotime($items["time"])); ?></div>
 													</div>
 												</li>
-
+												<?php } ?>
 											
 											</ul>
 											<!-- END comment-list -->
 											
 											<div class="comment-form-wrap col-md-12 pt-5">
-												<h3 class="mb-5">Yorum Yaz</h3>
+												<h3 style="color:#f3c623;" class="mb-5">Yorum Yaz</h3>
 												<form method="POST" class="p-3 p-md-5">
 													<div class="row">
 														<div class="col-md-6">
@@ -99,6 +90,7 @@ if($_SERVER["REQUEST_METHOD"] == 'POST' && isset($_POST['comment_submit'])){
 																<textarea name="yazi" id="message" cols="20" rows="5" class="form-control"></textarea>
 															</div>
 														</div>
+                                                        <input type="hidden" name="yaziBaslik" class="form-control" id="textTitle" value="<?php echo $myQuery->title; ?>">
 														<div class="col-md-12">
 															<div class="form-group">
 																<input type="submit" name="comment_submit" value="Paylaş" class="btn py-3 px-4 btn-primary">

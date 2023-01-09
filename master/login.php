@@ -1,30 +1,3 @@
-<?php
-require '../classes/func.php';
-
-if(isset($_SESSION["id"])){
-
-  header("Location: index.php");
-  
-}
-
-$login=new Login();
-
-if(isset($_POST["submit"])){
-
-$result= $login->login($_POST["username"],$_POST["password"]);
-
-if($result == 1){
-
-$_SESSION["login"] = true;
-
-$_SESSION["id"] = $login->idUser();
-
-header("Location: index.php");
-
-}
-}
-?>
-
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -57,27 +30,19 @@ header("Location: index.php");
             <div class="card col-lg-4 mx-auto">
               <div class="card-body px-5 py-5">
                 <h3 style="text-align:center;" class="card-title">Yönetici Girişi</h3>
-                <form method="post" action="">
+                <form method="POST" action="<?= htmlspecialchars("result.php"); ?>">
                   <div class="form-group">
                     <label>Kullanıcı Adı</label>
-                    <input type="text" class="form-control p_input" name="username">
+                    <input type="text" id="username" class="form-control p_input" name="username">
                   </div>
                   <div class="form-group">
                     <label>Parola</label>
-                    <input type="password" class="form-control p_input" name="password">
+                    <input type="password" id="password" class="form-control p_input" name="password">
                   </div>
-                  <!--  / <?php /* if (@$_GET['giris']== 'hatali') {
-                                  echo '
-                                  <div style="color:red;">
-                                  Kullanıcı Adı veya Şifre Hatalı
-                                  </div>';
-                                } */ ?> -->
                   <br>
                   <div class="text-center">
                     <button type="submit" name="submit" class="btn btn-info btn-block enter-btn">Giriş Yap</button>
                   </div>
-                  
-                  
                 </form>
               </div>
             </div>

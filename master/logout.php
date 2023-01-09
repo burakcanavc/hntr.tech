@@ -1,10 +1,11 @@
 <?php
 
-require '../classes/func.php';
+session_start();
 
-$_SESSION = [];
+require '../classes/routing.php';
+
 session_unset();
 session_destroy();
-header("Location: login.php");
+go("login.php");
 
 ?>

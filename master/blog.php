@@ -24,7 +24,7 @@ if(move_uploaded_file($fileTempName, $myPath)){
 
   $baslik = security("baslik");
 
-  $yazi = security("yazi");
+  $yazi = $_POST["yazi"];
 
   $etiket1 = security("etiket1");
 
@@ -34,9 +34,11 @@ if(move_uploaded_file($fileTempName, $myPath)){
 
   $insert=$db->Insert('INSERT INTO `tbl_blog` SET img=?, title=?, text=?, tag1=?, tag2=?, tag3=?',array($img,$baslik,$yazi,$etiket1,$etiket2,$etiket3));
 
+  $yaziId = $db->getRow('SELECT * FROM tbl_blog WHERE title=?',array($baslik));
+
   if($insert){
   
-    echo '<meta http-equiv="refresh" content="0;URL=https://hntr.tech/master/blog.php">';
+    echo '<meta http-equiv="refresh" content="0;URL=https://hntr.tech/master/blog-edit.php?id='.$yaziId->id.'">';
 
    }
 

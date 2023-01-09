@@ -27,7 +27,7 @@ $myQuery4=$db4->getRow(" Call sp_Service4()");
 												<li><span><?php echo $myQuery1->title_4; ?></span><?php echo $myQuery1->text_4; ?></li>
 												<li><span><?php echo $myQuery1->title_5; ?></span><?php echo $myQuery1->text_5; ?></li>
 											</ul>
-											<p><a href="contact.php" class="btn-custom-services">İLETİŞİM'E GEÇ</a></p>
+											<p><a href="iletisim" class="btn-custom-services">İLETİŞİM'E GEÇ</a></p>
 										</div>
 									</div>
 								</div>
@@ -44,7 +44,7 @@ $myQuery4=$db4->getRow(" Call sp_Service4()");
 												<li><span><?php echo $myQuery2->title_4; ?></span><?php echo $myQuery2->text_4; ?></li>
 												<li><span><?php echo $myQuery2->title_5; ?></span><?php echo $myQuery2->text_5; ?></li>
 											</ul>																				
-											<p><a href="contact.php" class="btn-custom-services">İLETİŞİM'E GEÇ</a></p>
+											<p><a href="iletisim" class="btn-custom-services">İLETİŞİM'E GEÇ</a></p>
 										</div>
 									</div>
 								</div>
@@ -61,7 +61,7 @@ $myQuery4=$db4->getRow(" Call sp_Service4()");
 												<li><span><?php echo $myQuery3->title_4; ?></span><?php echo $myQuery3->text_4; ?></li>
 												<li><span><?php echo $myQuery3->title_5; ?></span><?php echo $myQuery3->text_5; ?></li>
 											</ul>
-											<p><a href="contact.php" class="btn-custom-services">İLETİŞİM'E GEÇ</a></p>
+											<p><a href="iletisim" class="btn-custom-services">İLETİŞİM'E GEÇ</a></p>
 										</div>
 									</div>
 								</div>
@@ -78,7 +78,7 @@ $myQuery4=$db4->getRow(" Call sp_Service4()");
 												<li><span><?php echo $myQuery4->title_4; ?></span><?php echo $myQuery4->text_4; ?></li>
 												<li><span><?php echo $myQuery4->title_5; ?></span><?php echo $myQuery4->text_5; ?></li>
 											</ul>
-											<p><a href="contact.php	" class="btn-custom-services">İLETİŞİM'E GEÇ</a></p>
+											<p><a href="iletisim" class="btn-custom-services">İLETİŞİM'E GEÇ</a></p>
 										</div>
 									</div>
 								</div>

@@ -60,7 +60,7 @@ if($_SERVER["REQUEST_METHOD"] == 'POST' && isset($_POST['service1_submit'])){
 
   if($update1){
 
-    echo '<meta http-equiv="refresh" content="0;URL=http://localhost/hntr.tech/master/services.php">';
+    echo '<meta http-equiv="refresh" content="0;URL=https://hntr.tech/master/services.php">';
 
    }
 
@@ -102,7 +102,7 @@ if($_SERVER["REQUEST_METHOD"] == 'POST' && isset($_POST['service2_submit'])){
 
   if($update2){
 
-    echo '<meta http-equiv="refresh" content="0;URL=http://localhost/hntr.tech/master/services.php">';
+    echo '<meta http-equiv="refresh" content="0;URL=https://hntr.tech/master/services.php">';
 
    }
 
@@ -144,7 +144,7 @@ if($_SERVER["REQUEST_METHOD"] == 'POST' && isset($_POST['service3_submit'])){
 
   if($update3){
 
-    echo '<meta http-equiv="refresh" content="0;URL=http://localhost/hntr.tech/master/services.php">';
+    echo '<meta http-equiv="refresh" content="0;URL=https://hntr.tech/master/services.php">';
 
    }
 
@@ -186,12 +186,91 @@ if($_SERVER["REQUEST_METHOD"] == 'POST' && isset($_POST['service4_submit'])){
 
   if($update4){
 
-    echo '<meta http-equiv="refresh" content="0;URL=http://localhost/hntr.tech/master/services.php">';
+    echo '<meta http-equiv="refresh" content="0;URL=https://hntr.tech/master/services.php">';
 
    }
 
   }/* İşlem sonu */
+  
+/* Hizmet-1 fotoğrafını sunucuya yükleme ve fotoğraf ismini veritabanına update işlemi */
 
+$takeFile=$_FILES["myService1File"];
+$fileName=$takeFile["name"];
+$fileTempName=$takeFile["tmp_name"];
+$myPath="../images/".$fileName;
+
+if(move_uploaded_file($fileTempName, $myPath)){
+if($_SERVER["REQUEST_METHOD"] == 'POST' && isset($_POST['service1_img_submit'])){
+
+  $update=$db1->Update('UPDATE tbl_services SET img=? WHERE id=1',array($fileName));
+
+  if($update){
+
+    echo '<meta http-equiv="refresh" content="0;URL=https://hntr.tech/master/services.php">';
+
+   }
+  }
+}/* İşlem sonu */
+
+/* Hizmet-2 fotoğrafını sunucuya yükleme ve fotoğraf ismini veritabanına update işlemi */
+
+$takeFile=$_FILES["myService2File"];
+$fileName=$takeFile["name"];
+$fileTempName=$takeFile["tmp_name"];
+$myPath="../images/".$fileName;
+
+if(move_uploaded_file($fileTempName, $myPath)){
+if($_SERVER["REQUEST_METHOD"] == 'POST' && isset($_POST['service2_img_submit'])){
+
+  $update=$db2->Update('UPDATE tbl_services SET img=? WHERE id=2',array($fileName));
+
+  if($update){
+
+    echo '<meta http-equiv="refresh" content="0;URL=https://hntr.tech/master/services.php">';
+
+   }
+  }
+}/* İşlem sonu */
+
+/* Hizmet-3 fotoğrafını sunucuya yükleme ve fotoğraf ismini veritabanına update işlemi */
+
+$takeFile=$_FILES["myService3File"];
+$fileName=$takeFile["name"];
+$fileTempName=$takeFile["tmp_name"];
+$myPath="../images/".$fileName;
+
+if(move_uploaded_file($fileTempName, $myPath)){
+if($_SERVER["REQUEST_METHOD"] == 'POST' && isset($_POST['service3_img_submit'])){
+
+  $update=$db3->Update('UPDATE tbl_services SET img=? WHERE id=3',array($fileName));
+
+  if($update){
+
+    echo '<meta http-equiv="refresh" content="0;URL=https://hntr.tech/master/services.php">';
+
+   }
+  }
+}/* İşlem sonu */
+
+/* Hizmet-4 fotoğrafını sunucuya yükleme ve fotoğraf ismini veritabanına update işlemi */
+
+$takeFile=$_FILES["myService4File"];
+$fileName=$takeFile["name"];
+$fileTempName=$takeFile["tmp_name"];
+$myPath="../images/".$fileName;
+
+if(move_uploaded_file($fileTempName, $myPath)){
+if($_SERVER["REQUEST_METHOD"] == 'POST' && isset($_POST['service4_img_submit'])){
+
+  $update=$db4->Update('UPDATE tbl_services SET img=? WHERE id=4',array($fileName));
+
+  if($update){
+
+    echo '<meta http-equiv="refresh" content="0;URL=https://hntr.tech/master/services.php">';
+
+   }
+  }
+}/* İşlem sonu */
 
 
 ?>
@@ -224,7 +303,7 @@ if($_SERVER["REQUEST_METHOD"] == 'POST' && isset($_POST['service4_submit'])){
 
                   <div style="text-align: center">
 
-                  <img style="max-width:45%; height: auto;" src="../images/<?php echo $myQuery1->img; ?>" alt="about">
+                  <img style="max-width:50%; height: auto;" src="../images/<?php echo $myQuery1->img; ?>" alt="about">
 
                   </div>
 
@@ -233,25 +312,18 @@ if($_SERVER["REQUEST_METHOD"] == 'POST' && isset($_POST['service4_submit'])){
                   <div style="text-align: center">
 
                   <h4>Fotoğraf Yükle</h4>
-
                   </div>
-
                   <div style="text-align: center">
-
-                
-
+                  <form class="forms-sample" method="POST" enctype="multipart/form-data">
+                  <br>
+                  <input type="file" name="myService1File">
                           <span>
-
-                            <button class="btn btn-primary btn-icon-text" type="button"><i class="mdi mdi-upload btn-icon-prepend"></i>Yükle</button>
-
+                            <button name="service1_img_submit" class="btn btn-primary btn-icon-text" type="submit"><i class="mdi mdi-upload btn-icon-prepend"></i>Yükle</button>
                           </span>
-
+                          </form>
                           </div>
-
-                          <br><br>
-
+                          <br>
                           <hr size="10" color="#fff">
-
                           <br>
 
                           <h3  style="text-align:center;" class="card-title">Hizmet-1 Yazı</h3>
@@ -390,7 +462,7 @@ if($_SERVER["REQUEST_METHOD"] == 'POST' && isset($_POST['service4_submit'])){
 
                   <div style="text-align: center">
 
-                  <img style="max-width:45%; height: auto;" src="../images/<?php echo $myQuery2->img; ?>" alt="about">
+                  <img style="max-width:50%; height: auto;" src="../images/<?php echo $myQuery2->img; ?>" alt="about">
 
                   </div>
 
@@ -399,25 +471,18 @@ if($_SERVER["REQUEST_METHOD"] == 'POST' && isset($_POST['service4_submit'])){
                   <div style="text-align: center">
 
                   <h4>Fotoğraf Yükle</h4>
-
                   </div>
-
                   <div style="text-align: center">
-
-                
-
+                  <form class="forms-sample" method="POST" enctype="multipart/form-data">
+                  <br>
+                  <input type="file" name="myService2File">
                           <span>
-
-                            <button class="btn btn-primary btn-icon-text" type="button"><i class="mdi mdi-upload btn-icon-prepend"></i>Yükle</button>
-
+                            <button name="service2_img_submit" class="btn btn-primary btn-icon-text" type="submit"><i class="mdi mdi-upload btn-icon-prepend"></i>Yükle</button>
                           </span>
-
+                          </form>
                           </div>
-
-                          <br><br>
-
+                          <br>
                           <hr size="10" color="#fff">
-
                           <br>
 
                           <h3  style="text-align:center;" class="card-title">Hizmet-2 Yazı</h3>
@@ -556,7 +621,7 @@ if($_SERVER["REQUEST_METHOD"] == 'POST' && isset($_POST['service4_submit'])){
 
                   <div style="text-align: center">
 
-                  <img style="max-width:45%; height: auto;" src="../images/<?php echo $myQuery3->img; ?>" alt="about">
+                  <img style="max-width:50%; height: auto;" src="../images/<?php echo $myQuery3->img; ?>" alt="about">
 
                   </div>
 
@@ -565,25 +630,18 @@ if($_SERVER["REQUEST_METHOD"] == 'POST' && isset($_POST['service4_submit'])){
                   <div style="text-align: center">
 
                   <h4>Fotoğraf Yükle</h4>
-
                   </div>
-
                   <div style="text-align: center">
-
-                
-
+                  <form class="forms-sample" method="POST" enctype="multipart/form-data">
+                  <br>
+                  <input type="file" name="myService3File">
                           <span>
-
-                            <button class="btn btn-primary btn-icon-text" type="button"><i class="mdi mdi-upload btn-icon-prepend"></i>Yükle</button>
-
+                            <button name="service3_img_submit" class="btn btn-primary btn-icon-text" type="submit"><i class="mdi mdi-upload btn-icon-prepend"></i>Yükle</button>
                           </span>
-
+                          </form>
                           </div>
-
-                          <br><br>
-
+                          <br>
                           <hr size="10" color="#fff">
-
                           <br>
 
                           <h3  style="text-align:center;" class="card-title">Hizmet-3 Yazı</h3>
@@ -722,7 +780,7 @@ if($_SERVER["REQUEST_METHOD"] == 'POST' && isset($_POST['service4_submit'])){
 
                   <div style="text-align: center">
 
-                  <img style="max-width:45%; height: auto;" src="../images/<?php echo $myQuery4->img; ?>" alt="about">
+                  <img style="max-width:50%; height: auto;" src="../images/<?php echo $myQuery4->img; ?>" alt="about">
 
                   </div>
 
@@ -731,25 +789,18 @@ if($_SERVER["REQUEST_METHOD"] == 'POST' && isset($_POST['service4_submit'])){
                   <div style="text-align: center">
 
                   <h4>Fotoğraf Yükle</h4>
-
                   </div>
-
                   <div style="text-align: center">
-
-                
-
+                  <form class="forms-sample" method="POST" enctype="multipart/form-data">
+                  <br>
+                  <input type="file" name="myService4File">
                           <span>
-
-                            <button class="btn btn-primary btn-icon-text" type="button"><i class="mdi mdi-upload btn-icon-prepend"></i>Yükle</button>
-
+                            <button name="service4_img_submit" class="btn btn-primary btn-icon-text" type="submit"><i class="mdi mdi-upload btn-icon-prepend"></i>Yükle</button>
                           </span>
-
+                          </form>
                           </div>
-
-                          <br><br>
-
+                          <br>
                           <hr size="10" color="#fff">
-
                           <br>
 
                           <h3  style="text-align:center;" class="card-title">Hizmet-4 Yazı</h3>

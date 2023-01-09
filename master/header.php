@@ -1,6 +1,17 @@
 <?php
+/* Fonksiyon sayfalarını çağırma işlemi */
 require '../classes/db.php';
 require '../classes/safe.php';
+require '../classes/routing.php';
+/* İşlem sonu */
+
+/* Yönetici fotoğrafı ve ismi için veritabanı tablo çağırma işlemi */
+$db=new Database();
+$myQuery=$db->getRow("Call sp_Profile()");
+/* İşlem sonu */
+
+
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -56,11 +67,11 @@ require '../classes/safe.php';
             </a>
           </li>
           <li class="nav-item menu-items">
-            <a class="nav-link" href="notification.php">
+            <a class="nav-link" href="comments.php">
               <span class="menu-icon">
-                <i class="mdi mdi-bell"></i>
+                <i class="mdi mdi-comment"></i>
               </span>
-              <span class="menu-title">Bildirimler</span>
+              <span class="menu-title">Yorumlar</span>
             </a>
           </li>
           <li class="nav-item nav-category">
@@ -109,79 +120,11 @@ require '../classes/safe.php';
             <div class="collapse" id="auth">
               <ul class="nav flex-column sub-menu">
                 <li class="nav-item"> <a class="nav-link" href="blog.php"> Blog Oluştur </a></li>
-                <li class="nav-item"> <a class="nav-link" href="blog-edit.php"> Blog Yazıları </a></li>
+                <li class="nav-item"> <a class="nav-link" href="blogs.php"> Blog Yazıları </a></li>
               </ul>
             </div>
           </li> 
-          <li class="nav-item nav-category">
-            <span class="nav-link">Admin Paneli Elemanları</span>
-          </li>
-          <li class="nav-item menu-items">
-            <a class="nav-link" data-toggle="collapse" href="#ui-basic" aria-expanded="false" aria-controls="ui-basic">
-              <span class="menu-icon">
-                <i class="mdi mdi-laptop"></i>
-              </span>
-              <span class="menu-title">Basic UI Elements</span>
-              <i class="menu-arrow"></i>
-            </a>
-            <div class="collapse" id="ui-basic">
-              <ul class="nav flex-column sub-menu">
-                <li class="nav-item"> <a class="nav-link" href="buttons.php">Buttons</a></li>
-                <li class="nav-item"> <a class="nav-link" href="dropdowns.php">Dropdowns</a></li>
-                <li class="nav-item"> <a class="nav-link" href="typography.php">Typography</a></li>
-              </ul>
-            </div>
-          </li>
-          <li class="nav-item menu-items">
-            <a class="nav-link" href="basic_elements.php">
-              <span class="menu-icon">
-                <i class="mdi mdi-playlist-play"></i>
-              </span>
-              <span class="menu-title">Form Elements</span>
-            </a>
-          </li>
-          <li class="nav-item menu-items">
-            <a class="nav-link" href="basic-table.php">
-              <span class="menu-icon">
-                <i class="mdi mdi-table-large"></i>
-              </span>
-              <span class="menu-title">Tables</span>
-            </a>
-          </li>
-          <li class="nav-item menu-items">
-            <a class="nav-link" href="chartjs.php">
-              <span class="menu-icon">
-                <i class="mdi mdi-chart-bar"></i>
-              </span>
-              <span class="menu-title">Charts</span>
-            </a>
-          </li>
-          <li class="nav-item menu-items">
-            <a class="nav-link" href="mdi.php">
-              <span class="menu-icon">
-                <i class="mdi mdi-contacts"></i>
-              </span>
-              <span class="menu-title">Icons</span>
-            </a>
-          </li>
-          <li class="nav-item menu-items">
-            <a class="nav-link" data-toggle="collapse" href="#auth" aria-expanded="false" aria-controls="auth">
-              <span class="menu-icon">
-                <i class="mdi mdi-security"></i>
-              </span>
-              <span class="menu-title">User Pages</span>
-              <i class="menu-arrow"></i>
-            </a>
-            <div class="collapse" id="auth">
-              <ul class="nav flex-column sub-menu">
-                <li class="nav-item"> <a class="nav-link" href="blank-page.php"> Blank Page </a></li>
-                <li class="nav-item"> <a class="nav-link" href="error-404.php"> 404 </a></li>
-                <li class="nav-item"> <a class="nav-link" href="error-500.php"> 500 </a></li>
-                <li class="nav-item"> <a class="nav-link" href="login.php"> Login </a></li>
-                <li class="nav-item"> <a class="nav-link" href="register.php"> Register </a></li>
-              </ul>
-            </div>
-          </li> 
+          
         </ul>
       </nav>
       <!-- partial -->
@@ -196,83 +139,19 @@ require '../classes/safe.php';
             <ul class="navbar-nav navbar-nav-right">
               
               
-              <li class="nav-item dropdown">
-                <a class="nav-link count-indicator dropdown-toggle" id="messageDropdown" href="#" data-toggle="dropdown" aria-expanded="false">
-                  <i class="mdi mdi-email"></i>
-                  <span class="count bg-success"></span>
-                </a>
-                <div class="dropdown-menu dropdown-menu-right navbar-dropdown preview-list" aria-labelledby="messageDropdown">
-                  <h6 class="p-3 mb-0">Mesajlar</h6>
-                  <div class="dropdown-divider"></div>
-                  <a class="dropdown-item preview-item">
-                    <div class="preview-thumbnail">
-                      <img src="assets/images/faces/face4.jpg" alt="image" class="rounded-circle profile-pic">
-                    </div>
-                    <div class="preview-item-content">
-                      <p class="preview-subject ellipsis mb-1">Mark send you a message</p>
-                      <p class="text-muted mb-0"> 1 Minutes ago </p>
-                    </div>
-                  </a>
-                  <div class="dropdown-divider"></div>
-                  <a class="dropdown-item preview-item">
-                    <div class="preview-thumbnail">
-                      <img src="assets/images/faces/face2.jpg" alt="image" class="rounded-circle profile-pic">
-                    </div>
-                    <div class="preview-item-content">
-                      <p class="preview-subject ellipsis mb-1">Cregh send you a message</p>
-                      <p class="text-muted mb-0"> 15 Minutes ago </p>
-                    </div>
-                  </a>
-                  <div class="dropdown-divider"></div>
-                  <a class="dropdown-item preview-item">
-                    <div class="preview-thumbnail">
-                      <img src="assets/images/faces/face3.jpg" alt="image" class="rounded-circle profile-pic">
-                    </div>
-                    <div class="preview-item-content">
-                      <p class="preview-subject ellipsis mb-1">Profile picture updated</p>
-                      <p class="text-muted mb-0"> 18 Minutes ago </p>
-                    </div>
-                  </a>
-                  <div class="dropdown-divider"></div>
-                  <p class="p-3 mb-0 text-center">4 new messages</p>
-                </div>
-              </li>
-              <li class="nav-item dropdown border-left">
-                <a class="nav-link count-indicator dropdown-toggle" id="notificationDropdown" href="#" data-toggle="dropdown">
-                  <i class="mdi mdi-bell"></i>
-                  <span class="count bg-danger"></span>
-                </a>
-                <div class="dropdown-menu dropdown-menu-right navbar-dropdown preview-list" aria-labelledby="notificationDropdown">
-                  <h6 class="p-3 mb-0">Notifications</h6>
-                  <div class="dropdown-divider"></div>
-                  <a class="dropdown-item preview-item">
-                    <div class="preview-thumbnail">
-                      <div class="preview-icon bg-dark rounded-circle">
-                        <i class="mdi mdi-calendar text-success"></i>
-                      </div>
-                    </div>
-                    <div class="preview-item-content">
-                      <p class="preview-subject mb-1">Event today</p>
-                      <p class="text-muted ellipsis mb-0"> Just a reminder that you have an event today </p>
-                    </div>
-                  </a>
-
-                  <div class="dropdown-divider"></div>
-                  <p class="p-3 mb-0 text-center">See all notifications</p>
-                </div>
-              </li>
+              
               <li class="nav-item dropdown">
                 <a class="nav-link" id="profileDropdown" href="#" data-toggle="dropdown">
                   <div class="navbar-profile">
-                    <img class="img-xs rounded-circle" src="../images/about.jpg" alt="">
-                    <p class="mb-0 d-none d-sm-block navbar-profile-name">Burakcan Avcı</p>
+                    <img class="img-xs rounded-circle" src="../images/<?php echo $myQuery->img; ?>" alt="master">
+                    <p class="mb-0 d-none d-sm-block navbar-profile-name"><?php echo $myQuery->name; ?></p>
                     <i class="mdi mdi-menu-down d-none d-sm-block"></i>
                   </div>
                 </a>
                 <div class="dropdown-menu dropdown-menu-right navbar-dropdown preview-list" aria-labelledby="profileDropdown">
                   <h6 class="p-3 mb-0">Profil</h6>
                   <div class="dropdown-divider"></div>
-                  <a class="dropdown-item preview-item">
+                  <a href="profile.php" class="dropdown-item preview-item">
                     <div class="preview-thumbnail">
                       <div class="preview-icon bg-dark rounded-circle">
                         <i class="mdi mdi-settings text-success"></i>

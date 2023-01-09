@@ -2,6 +2,8 @@
 
 require "db.php";
 
+session_start();
+
 /* ↓ sınıfın bağlangıcı ↓ */
 class Login extends Database{
 
@@ -16,7 +18,7 @@ $loginQuery = parent::getRow("Call sp_Login()");
 
 if($loginQuery != null){
 
-    if($password == $loginQuery->master_pass){
+    if($username == $loginQuery->master_user && $password == $loginQuery->master_pass){
 
     $this->id = $loginQuery->id;
         

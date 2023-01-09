@@ -9,6 +9,7 @@ class Database{
 
 
 /* ↓ değişkenler ↓ */
+
 private $MYSQL_HOST='localhost';
 private $MYSQL_USER='root';     
 private $MYSQL_PASS='';
@@ -17,6 +18,7 @@ private $CHARSET='UTF8';
 private $COLLATION='utf8_general_ci';
 private $pdo=null;
 private $stmt=null;
+
 /* ↑ değişkenlerin sonu ↑ */
 
 
@@ -287,3 +289,4 @@ public function __destruct (){
 
 }/* ↑ sınıfın sonu ↑ */
 
+?>
