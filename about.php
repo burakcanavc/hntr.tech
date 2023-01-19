@@ -1,6 +1,6 @@
 
 <?php
-
+$title = 'Hakkımızda • ';
 require 'header.php'; 
 
 $db=new Database();
@@ -17,6 +17,7 @@ $myQuery=$db->getRow("Call sp_About()");
 								<div class="text px-4 pt-5 pt-md-0 px-md-4 pr-md-5 ftco-animate">
 									<h2 class="mb-4"><span><?php echo $myQuery->title; ?></span></h2>
 									<p>  <?php echo $myQuery->text; ?>  </p>
+                                    <br>
 									<div class="team-wrap row mt-4">
 										<div class="col-md-4 team">
 											<div class="img" style="background-image: url(images/<?php echo $myQuery->team_img; ?>);"></div>

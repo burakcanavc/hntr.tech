@@ -1,5 +1,6 @@
 
 <?php
+$title = 'Blog • ';
 require 'header.php';
 $yazi_id= $_GET['id'];
 /* Veritabanı tablo çağırma işlemi */
@@ -8,6 +9,7 @@ $myQuery=$db->getRow('SELECT * FROM tbl_blog WHERE id=?',array($yazi_id));
 $blogDate="$myQuery->date";
 $myQuery1=$db->getRow("Call sp_About()");
 $blogYorum=$db->TableOperations('SELECT * FROM tbl_comments WHERE text_title="'.$myQuery->title.'"',PDO::FETCH_ASSOC);
+$commentCount=$db->getColumn('SELECT COUNT(*) FROM tbl_comments WHERE text_title=?',array($myQuery->title));
 /* İşlem sonu */
 
 /* Yorum gönderme işlemi */
@@ -44,14 +46,17 @@ if($_SERVER["REQUEST_METHOD"] == 'POST' && isset($_POST['comment_submit'])){
 										<div style="color:#FFF;"><?php echo $myQuery->text; ?></div>
 										<div class="tag-widget post-tag-container mb-3 mt-3">
 											<div class="tagcloud">
-												<a href="" class="tag-cloud-link"><?= $myQuery->tag1; ?></a>
-												<a href="" class="tag-cloud-link"><?= $myQuery->tag2; ?></a>
-												<a href="" class="tag-cloud-link"><?= $myQuery->tag3; ?></a>
+                                                <?php
+                                                $tags= explode(",",$myQuery->tag1);
+                                                foreach($tags as $tag){
+                                                ?>
+												<a href="" class="tag-cloud-link"><?=$tag; ?></a>
+                                                <?php } ?>
 											</div>
                                             <div class="mb-2 mt-2 font-weight-bold  " style="font-size:20px;color:#fff;"><?= $myQuery1->team_name; ?> • <?=date("d-m-Y", strtotime($blogDate)); ?></div>
 										</div>
 										<div class="pt-0 mt-3">
-											<h3 style="color:#f3c623;" class="mb-5 font-weight-bold">Yorumlar</h3>
+											<h3 style="color:#f3c623;" class="mb-5 font-weight-bold">Yorumlar (<?=$commentCount;?>)</h3>
 											<ul class="comment-list">
 											<?php foreach($blogYorum as $items){ ?>
 												<li class="comment">

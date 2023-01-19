@@ -1,5 +1,5 @@
 <?php
-include 'header.php';
+require 'header.php';
 
 $db=new Database();
 $myQuery=$db->getRow(" Call sp_Home()");	
@@ -10,19 +10,19 @@ $myQuery=$db->getRow(" Call sp_Home()");
 				<div class="row d-flex no-gutters">
 					<div class="col-md-12 portfolio-wrap">
 						<div class="row no-gutters align-items-center">
-						  <img class="deneme col-md-6" src="images/<?php echo $myQuery->img_main; ?>" alt="main-photo" >
+						  <img class="deneme col-md-6" src="images/<?php echo $myQuery->img_main; ?>" alt="<?php echo $myQuery1->site_name;?>" >
 							<div class="col-md-6">
 								<div class="text pt-5 pl-0 px-lg-5 pl-md-4 ftco-animate">
 									<div class="px-4 px-lg-4">
 										<div class="desc">
-											<div class="top">
-												<h2>Merhaba</h2><br>
-												<h2 style="color:#f3c623;">&nbsp;&nbsp;<?php echo $myQuery->main_title; ?> 'e</h2>
-									
+											<div class="top mobilmainfont" style="text-align:center;">
+												<h1 style>&nbsp;Merhaba&nbsp;</h1><br>
+												<h1 style="color:#f3c623;">&nbsp;<?php echo $myQuery1->site_name;?>'e&nbsp;</h1>
+                                            <br>
 											</div>
-											<div class="animation_text">
-						 					<h2>&nbsp;&nbsp;&nbsp;&nbsp;<span class="typewrite" data-period="2000" data-words='[ " Hoşgeldiniz"]'></span></h2>
-                                           </div><br>
+											<div style="text-align:center;" class="animation_text">
+						 					<h1>&nbsp;<span class="typewrite" data-period="2000" data-words='[ "Hoşgeldiniz"]'></span>&nbsp;</h1>
+                                           </div><br><br>
                                             <script>
                                             var Text = function(el, toRotate, period) {
                                               this.toRotate = toRotate;

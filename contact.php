@@ -1,5 +1,6 @@
 
 <?php
+$title = 'İletişim • ';
 require 'header.php';
 
 /* Veritabanı tablo çağırma işlemi */
@@ -23,7 +24,7 @@ if($_SERVER["REQUEST_METHOD"] == 'POST' && isset($_POST['message_submit'])){
 	if($insert){
 	
 	  $mesajBasarili="Mesajınız başarılı şekilde gönderilmiştir. Birazdan sayfa otomatik olarak yenilenecektir.";
-	  echo '<meta http-equiv="refresh" content="3;URL=https://hntr.tech/contact.php">';
+	  echo '<meta http-equiv="refresh" content="3;URL=https://hntr.tech/iletisim">';
   
 	 }
 	
@@ -126,7 +127,7 @@ if($_SERVER["REQUEST_METHOD"] == 'POST' && isset($_POST['message_submit'])){
 											<span class="fa fa-map-marker"></span>
 										</div>
 										<div class="text pl-3">
-											<p><span>Google Maps: </span>Aşağıda yer alan Google Maps modülünü kullanabilirsiniz.</p>
+											<p><span>Google Maps: </span>👇👇👇</p>
 										</div>
 									</div>
 								</div>

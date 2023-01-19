@@ -1,4 +1,5 @@
 <?php
+$title = 'Blog • ';
 require 'header.php';
 
 /* Veritabanı tablo çağırma işlemi */
@@ -16,7 +17,7 @@ $myQuery=$db->getRow("Call sp_About()");
 								<div class="row">
                                   <div class="img img-blog w-100" style="background-image: url(images/code.jpg); height: 90%;text-align:center;">
                                   <br><br><br><br><br>
-								 <h1 style="font-size: 80px; text-shadow: 1px 4px 4px black; color:#fff;" class="mb-3">Blog Yazılarım</h1></div>
+								 <h1 style="font-size: 80px; text-shadow: 1px 4px 4px black; color:#fff;" class="mb-3">Blog Yazılarımız</h1></div>
 									
 								</div><!-- END-->
 							</div>
@@ -39,9 +40,12 @@ $myQuery=$db->getRow("Call sp_About()");
                         
                         <div class="tag-widget post-tag-container mb-3 mt-3">
 											<div class="tagcloud">
-												<a href="yazi-<?=$items["id"]; ?>" class="tag-cloud-link"><?=$items["tag1"]; ?></a>
-												<a href="yazi-<?=$items["id"]; ?>" class="tag-cloud-link"><?=$items["tag2"]; ?></a>
-												<a href="yazi-<?=$items["id"]; ?>" class="tag-cloud-link"><?=$items["tag3"]; ?></a>
+                                                <?php
+                                                $tags= explode(",",$items["tag1"]);
+                                                foreach($tags as $tag){
+                                                ?>
+												<a href="yazi-<?=$items["id"]; ?>" class="tag-cloud-link"><?=$tag; ?></a>
+                                                <?php } ?>
 											</div>
                                             <div class="mb-2 mt-2" style="color:#fff;"><?= $myQuery->team_name; ?> • <?=date("d-m-Y", strtotime($items["date"])); ?></div>
                                         <hr size="10" color="#f3c623"> <br>

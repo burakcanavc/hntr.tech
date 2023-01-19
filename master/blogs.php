@@ -39,7 +39,7 @@ $blogYazisi=$db->TableOperations("SELECT * FROM tbl_blog",PDO::FETCH_ASSOC);
                         ?>
                         <tr>
                             <td><?=$items["title"]; ?></td>
-                            <td><?=$items["tag1"]; ?> - <?=$items["tag2"]; ?> - <?=$items["tag3"]; ?></td>
+                            <td><?=$items["tag1"]; ?></td>
                             <td><?=$items["date"]; ?></td>
                             <td><a href="blog-edit.php?id=<?=$items["id"]; ?>"><button type="button" class="btn btn-primary btn-fw">Görüntüle/Düzenle</button></a>
                           </td>

@@ -28,11 +28,7 @@ if(move_uploaded_file($fileTempName, $myPath)){
 
   $etiket1 = security("etiket1");
 
-  $etiket2 = security("etiket2");
-
-  $etiket3 = security("etiket3");
-
-  $insert=$db->Insert('INSERT INTO `tbl_blog` SET img=?, title=?, text=?, tag1=?, tag2=?, tag3=?',array($img,$baslik,$yazi,$etiket1,$etiket2,$etiket3));
+  $insert=$db->Insert('INSERT INTO `tbl_blog` SET img=?, title=?, text=?, tag1=?',array($img,$baslik,$yazi,$etiket1));
 
   $yaziId = $db->getRow('SELECT * FROM tbl_blog WHERE title=?',array($baslik));
 
@@ -137,22 +133,10 @@ if(move_uploaded_file($fileTempName, $myPath)){
                       <hr size="10" color="#fff">
                       <br>
                     <div class="form-group">
-                      <h4 for="exampleInputName1">Etiket-1</h4>
-
+                      <h4 for="exampleInputName1">Etiketler</h4>
+                        
                       <input type="text" name="etiket1" class="form-control" id="exampleInputName1" placeholder="">
-
-                    </div>
-                    <div class="form-group">
-                      <h4 for="exampleInputName1">Etiket-2</h4>
-
-                      <input type="text" name="etiket2" class="form-control" id="exampleInputName1" placeholder="">
-
-                    </div>
-                    <div class="form-group">
-                      <h4 for="exampleInputName1">Etiket-3</h4>
-
-                      <input type="text" name="etiket3" class="form-control" id="exampleInputName1" placeholder="">
-
+                      <div>Sonuncusu hariç, yazılan her anahtar kelimeden sonra virgül (,) koymayı unutmayın!</div>
                     </div>
                    
                       <div style="text-align:center;">

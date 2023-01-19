@@ -28,11 +28,7 @@ if(move_uploaded_file($fileTempName, $myPath)){
 
   $etiket1 = security("etiket1");
 
-  $etiket2 = security("etiket2");
-
-  $etiket3 = security("etiket3");
-
-  $update=$db->Update('UPDATE tbl_blog SET img=?, title=?, text=?, tag1=?, tag2=?, tag3=? WHERE id=?',array($img,$baslik,$yazi,$etiket1,$etiket2,$etiket3,$yazi_id));
+  $update=$db->Update('UPDATE tbl_blog SET img=?, title=?, text=?, tag1=? WHERE id=?',array($img,$baslik,$yazi,$etiket1,$yazi_id));
 
   if($update){
   
@@ -47,11 +43,7 @@ if(move_uploaded_file($fileTempName, $myPath)){
 
   $etiket1 = security("etiket1");
 
-  $etiket2 = security("etiket2");
-
-  $etiket3 = security("etiket3");
-
-  $update=$db->Update('UPDATE tbl_blog SET title=?, text=?, tag1=?, tag2=?, tag3=? WHERE id=?',array($baslik,$yazi,$etiket1,$etiket2,$etiket3,$yazi_id));
+  $update=$db->Update('UPDATE tbl_blog SET title=?, text=?, tag1=? WHERE id=?',array($baslik,$yazi,$etiket1,$yazi_id));
 
   if($update){
   
@@ -153,22 +145,10 @@ if(move_uploaded_file($fileTempName, $myPath)){
                       <hr size="10" color="#fff">
                       <br>
                     <div class="form-group">
-                      <h4 for="exampleInputName1">Etiket-1</h4>
+                      <h4 for="exampleInputName1">Etiketler</h4>
 
                       <input type="text" name="etiket1" class="form-control" id="exampleInputName1" value="<?php echo $myQuery->tag1; ?>">
-
-                    </div>
-                    <div class="form-group">
-                      <h4 for="exampleInputName1">Etiket-2</h4>
-
-                      <input type="text" name="etiket2" class="form-control" id="exampleInputName1" value="<?php echo $myQuery->tag2; ?>">
-
-                    </div>
-                    <div class="form-group">
-                      <h4 for="exampleInputName1">Etiket-3</h4>
-
-                      <input type="text" name="etiket3" class="form-control" id="exampleInputName1" value="<?php echo $myQuery->tag3; ?>">
-
+                      <div>Sonuncusu hariç, yazılan her anahtar kelimeden sonra virgül (,) koymayı unutmayın!</div>
                     </div>
                    
                       <div style="text-align:center;">

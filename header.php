@@ -7,6 +7,25 @@ require 'classes/safe.php';
 $db1=new Database();
 
 $myQuery1=$db1->getRow(" Call sp_About()");
+/* Menüdeki aktif sayfayı renkli gösterme işlemi */
+switch($title){
+	case '':
+		$activePage1="colorlib-active";
+		break;
+	case 'Hakkımızda • ':
+		$activePage2="colorlib-active";
+		break;
+	case 'Hizmetlerimiz • ':
+		$activePage3="colorlib-active";
+		break;
+	case 'İletişim • ':
+		$activePage4="colorlib-active";
+		break;
+	case 'Blog • ':
+		$activePage5="colorlib-active";
+		break;			
+}
+/*İşlem Sonu */
 
 ?>
 
@@ -15,10 +34,21 @@ $myQuery1=$db1->getRow(" Call sp_About()");
 <html lang="en">
 
 <head>
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-H8CYZ2B2PC"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
 
-	<title>hntr.tech</title>
+  gtag('config', 'G-H8CYZ2B2PC');
+</script>
+
+	<title><?php echo $title;?><?php echo $myQuery1->site_name;?></title>
 
 	<meta charset="utf-8">
+
+    <meta name="description" content="Hntr Tech. website ve mobil uygulama ihtiyaçlarınız için her türlü desteğe hazır. Websitemizi ziyaret edebilir ve bizimle iletişime geçebilirsiniz.">
 
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
@@ -60,23 +90,21 @@ $myQuery1=$db1->getRow(" Call sp_About()");
 
 	<aside id="colorlib-aside" role="complementary" class="js-fullheight">
 
-
-
-		<h1 id="colorlib-logo" class="mb-4 mb-md-5"><a href="/" style="background-image: url(images/bg_2.jpg);"><?php echo $myQuery1->site_name; ?></a></h1>
+		<h1 id="colorlib-logo" class="mb-4 mb-md-5"><a href="/" style="background-color:#fff;"><?php echo $myQuery1->site_name; ?></a></h1>
 
 		<nav id="colorlib-main-menu" role="navigation">
 
 			<ul>
 
-				<li class="colorlib-active"><a href="/">ANASAYFA</a></li>
+				<li class="<?=$activePage1?>"><a href="/">ANASAYFA</a></li>
 
-				<li><a href="hakkimizda">HAKKIMIZDA</a></li>
+				<li class="<?=$activePage2?>"><a href="hakkimizda">HAKKIMIZDA</a></li>
 
-				<li><a href="hizmetlerimiz">HİZMETLERİMİZ</a></li>
+				<li class="<?=$activePage3?>"><a href="hizmetlerimiz">HİZMETLERİMİZ</a></li>
 
-				<li><a href="iletisim">İLETİŞİM</a></li>
+				<li class="<?=$activePage4?>"><a href="iletisim">İLETİŞİM</a></li>
 
-				<li><a href="blog">BLOG</a></li>
+				<li class="<?=$activePage5?>"><a href="blog">BLOG</a></li>
 
 			</ul>
 

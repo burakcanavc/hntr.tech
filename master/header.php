@@ -1,4 +1,6 @@
 <?php
+ob_start();
+session_start();
 /* Fonksiyon sayfalarını çağırma işlemi */
 require '../classes/db.php';
 require '../classes/safe.php';
@@ -11,7 +13,18 @@ $myQuery=$db->getRow("Call sp_Profile()");
 /* İşlem sonu */
 
 
+/* Session kontrol işlemi */
 
+$myIP=$_SERVER["REMOTE_ADDR"];
+$myBrowser=$_SERVER["HTTP_USER_AGENT"];
+if($_SESSION["LogedIn"] === true && $myIP ==
+$_SESSION["LoginIP"] && $_SESSION["userAgent"] == $myBrowser){
+}else{
+  go("logout.php");
+}
+
+/* İşlem sonu */
+     
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -43,8 +56,8 @@ $myQuery=$db->getRow("Call sp_Profile()");
       <!-- partial:partials/_sidebar.html -->
       <nav class="sidebar sidebar-offcanvas" id="sidebar">
         <div class="sidebar-brand-wrapper d-none d-lg-flex align-items-center justify-content-center fixed-top">
-          <a class="sidebar-brand brand-logo-hntr" href="index.php"><img src="../images/hntr.png" alt="logo" /></a>
-          <a class="sidebar-brand brand-logo-mini" href="index.php"><img src="../images/hntr1.png" alt="logo" /></a>
+          <a class="sidebar-brand brand-logo" href="index.php"><img src="../images/hntr.png" alt="Master"/></a>
+          <a class="sidebar-brand brand-logo-mini" href="index.php"><img src="../images/hntr1.png" alt="Master Mini"/></a>
         </div>  
         <ul class="nav">
           <li class="nav-item nav-category">
@@ -72,6 +85,25 @@ $myQuery=$db->getRow("Call sp_Profile()");
                 <i class="mdi mdi-comment"></i>
               </span>
               <span class="menu-title">Yorumlar</span>
+            </a>
+          </li>
+          <li class="nav-item nav-category">
+            <span class="nav-link">Blog</span>
+          </li>
+          <li class="nav-item menu-items">
+            <a class="nav-link" href="blog.php">
+              <span class="menu-icon">
+                <i class="mdi mdi-blogger"></i>
+              </span>
+              <span class="menu-title">Blog Oluştur</span>
+            </a>
+          </li>
+          <li class="nav-item menu-items">
+            <a class="nav-link" href="blogs.php">
+              <span class="menu-icon">
+                <i class="mdi mdi-blogger"></i>
+              </span>
+              <span class="menu-title">Blog Yazıları</span>
             </a>
           </li>
           <li class="nav-item nav-category">
@@ -109,22 +141,25 @@ $myQuery=$db->getRow("Call sp_Profile()");
               <span class="menu-title">İletişim</span>
             </a>
           </li>
+          <li class="nav-item nav-category">
+            <span class="nav-link">Profil</span>
+          </li>
           <li class="nav-item menu-items">
-            <a class="nav-link" data-toggle="collapse" href="#auth" aria-expanded="false" aria-controls="auth">
+            <a class="nav-link" href="profile.php">
               <span class="menu-icon">
-                <i class="mdi mdi-blogger"></i>
+                <i class="mdi mdi-account"></i>
               </span>
-              <span class="menu-title">Blog</span>
-              <i class="menu-arrow"></i>
+              <span class="menu-title">Ayarlar</span>
             </a>
-            <div class="collapse" id="auth">
-              <ul class="nav flex-column sub-menu">
-                <li class="nav-item"> <a class="nav-link" href="blog.php"> Blog Oluştur </a></li>
-                <li class="nav-item"> <a class="nav-link" href="blogs.php"> Blog Yazıları </a></li>
-              </ul>
-            </div>
-          </li> 
-          
+          </li>
+          <li class="nav-item menu-items">
+            <a class="nav-link" href="logout.php">
+              <span class="menu-icon">
+                <i class="mdi mdi-logout"></i>
+              </span>
+              <span class="menu-title">Çıkış Yap</span>
+            </a>
+          </li>         
         </ul>
       </nav>
       <!-- partial -->
@@ -132,9 +167,9 @@ $myQuery=$db->getRow("Call sp_Profile()");
         <!-- partial:partials/_navbar.html -->
         <nav class="navbar p-0 fixed-top d-flex flex-row">
           <div class="navbar-brand-wrapper d-flex d-lg-none align-items-center justify-content-center">
-            <a class="navbar-brand brand-logo-mini" href="index.php"><img src="assets/images/hntr1.png" alt="logo" /></a>
+            <a class="navbar-brand brand-logo-mini" href="index.php"><img src="../images/hntr1.png" alt="Master Mini" /></a>
           </div>
-          <div class="navbar-menu-wrapper flex-grow d-flex align-items-stretch">
+          <div class="navbar-menu-wrapper  d-flex align-items-stretch">
             
             <ul class="navbar-nav navbar-nav-right">
               
@@ -176,7 +211,7 @@ $myQuery=$db->getRow("Call sp_Profile()");
               </li>
             </ul>
             <button class="navbar-toggler navbar-toggler-right d-lg-none align-self-center" type="button" data-toggle="offcanvas">
-              <span class="mdi mdi-format-line-spacing"></span>
+              <span class="mdi mdi-menu"></span>
             </button>
           </div>
         </nav>

@@ -8468,7 +8468,7 @@ h1, h2, h3, h4, h5,
     font-size: 60px;
     line-height: .8;
     font-family: "Abril Fatface", cursive; }
-    @media (max-width: 1199.98px) {
+    @media (max-width: 1400px) {
       #colorlib-aside #colorlib-logo {
         font-size: 40px; } }
     #colorlib-aside #colorlib-logo span {
@@ -8739,6 +8739,12 @@ h1, h2, h3, h4, h5,
   .ftco-about .text h2 span {
     font-weight: 900;
     color: #f3c623; }
+
+    h1 {
+        font-size: 60px;
+        font-family: "Abril Fatface", cursive;
+        line-height: 1.2;
+        color: #fff; }
 
 .ftco-about .team-wrap .team {
   width: 100%;

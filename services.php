@@ -1,4 +1,5 @@
 <?php
+$title = 'Hizmetlerimiz • ';
 include 'header.php';
 
 $db1=new Database();

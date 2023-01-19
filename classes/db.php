@@ -14,8 +14,8 @@ private $MYSQL_HOST='localhost';
 private $MYSQL_USER='root';     
 private $MYSQL_PASS='';
 private $MYSQL_DB='hntr.tech';
-private $CHARSET='UTF8';
-private $COLLATION='utf8_general_ci';
+private $CHARSET='UTF8MB4';
+private $COLLATION='utf8mb4_general_ci';
 private $pdo=null;
 private $stmt=null;
 

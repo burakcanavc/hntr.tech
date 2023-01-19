@@ -1,19 +1,7 @@
      <?php
      require 'header.php';
 
-/* Session kontrol işlemi */
 
-$myIP=$_SERVER["REMOTE_ADDR"];
-$myBrowser=$_SERVER["HTTP_USER_AGENT"];
-if(isset($_SESSION["LogedIn"]) && $_SESSION["LogedIn"] === true && $myIP ==
-$_SESSION["LoginIP"] && $_SESSION["userAgent"] == $myBrowser){
-  return "Başarılı";
-}else{
-    go("logout.php");
-}
-
-/* İşlem sonu */
-     
  /* Veritabanı tablo çağırma işlemi */
 
 $db=new Database();
